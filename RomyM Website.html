@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Growth Operations &amp; AI Integration for Founders | Romy Mueller</title>
+<meta name="description" content="Growth operations and AI integration for established founders. I redesign the operational infrastructure of founder-led businesses so growth stops depending on the founder.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://romymofficial.com/">
+<meta property="og:title" content="Growth Operations &amp; AI Integration for Founders | Romy Mueller">
+<meta property="og:description" content="Growth operations and AI integration for established founders. I redesign the operational infrastructure of founder-led businesses so growth stops depending on the founder.">
+<meta property="og:image" content="https://romymofficial.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="canonical" href="https://romymofficial.com/">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<!-- Montserrat via Google Fonts (Noto Serif + Raleway are self-hosted) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RomyM Official",
+  "founder": "Romy Mueller",
+  "url": "https://romymofficial.com",
+  "description": "Growth operations and AI integration for established founders",
+  "serviceType": ["Growth Operations", "AI Integration", "Business Systems", "Operational Infrastructure"]
+}
+</script>
+
+<style>
+/* ── Self-hosted fonts ────────────────────────── */
+@font-face{font-family:'Noto Serif';src:url('fonts/Noto_Serif_400.ttf') format('truetype');font-weight:400;font-display:swap;}
+@font-face{font-family:'Noto Serif';src:url('fonts/Noto_Serif_500.ttf') format('truetype');font-weight:500;font-display:swap;}
+@font-face{font-family:'Raleway';src:url('fonts/Raleway_400.ttf') format('truetype');font-weight:400;font-display:swap;}
+@font-face{font-family:'Raleway';src:url('fonts/Raleway_600.ttf') format('truetype');font-weight:600;font-display:swap;}
+
+/* ── Tokens ───────────────────────────────────── */
+:root{
+  --teal:#0f5e70; --forest:#0d4249; --steel:#86b1b4;
+  --sage:#c3dbd8; --gold:#d3a032; --cream:#f3f1ec;
+  --white:#ffffff; --black:#1f1f1f; --fg2:#4a4a4a; --fg3:#7a7a7a;
+  --line:rgba(31,31,31,0.09);
+  --serif:'Noto Serif','Times New Roman',Georgia,serif;
+  --label:'Raleway','Helvetica Neue',Arial,sans-serif;
+  --sans:'Montserrat',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(0.22,0.61,0.36,1);
+}
+
+/* ── Base ─────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:var(--white);color:var(--black);font-family:var(--sans);font-size:1rem;line-height:1.65;text-wrap:pretty;}
+img{display:block;max-width:100%;height:auto;}
+button,input{font-family:inherit;}
+a{color:inherit;text-decoration:none;}
+
+/* ── Utility ──────────────────────────────────── */
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px;}
+
+/* Even out short display lines */
+.recog-h2,.reframe-h2,.cs-h2,.method-h2,.services-h2,.about-h2,
+.recog-title,.recog-statement p,
+.cs-item-title,.cs-pullquote,.cs-conclusion,
+.method-name,.service-title,.hero-h1{text-wrap:balance;}
+/* Body copy: fix orphans WITHOUT narrowing the block */
+.recog-text,.recog-body,.cs-intro,.cs-item-text,.cs-pullquote,
+.method-desc,.method-intro,.service-body,.services-lead,
+.reframe-body,.about-body,.hero-body{text-wrap:pretty;}
+
+.eyebrow{
+  font-family:var(--label);font-size:.69rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.18em;color:var(--fg3);
+}
+.eyebrow-lt{color:var(--steel);}
+.gold-rule{width:32px;height:2px;background:var(--gold);margin:12px 0 22px;}
+.steel-rule{width:32px;height:1px;background:var(--steel);margin:12px 0 22px;}
+
+/* ── Buttons ──────────────────────────────────── */
+.btn{
+  display:inline-block;
+  font-family:var(--sans);font-size:.69rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.08em;
+  padding:13px 26px;cursor:pointer;border:1px solid transparent;
+  transition:background 180ms var(--ease),color 180ms var(--ease),border-color 180ms var(--ease);
+}
+.btn-solid{background:var(--teal);color:var(--white);border-color:var(--teal);}
+.btn-solid:hover{background:var(--forest);border-color:var(--forest);}
+.btn-ghost{background:transparent;color:var(--teal);border-color:var(--teal);}
+.btn-ghost:hover{background:var(--teal);color:var(--white);}
+.btn-ghost-lt{background:transparent;color:var(--white);border-color:rgba(255,255,255,.45);}
+.btn-ghost-lt:hover{background:var(--white);color:var(--teal);}
+
+/* ═══════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:72px;
+  background:rgba(255,255,255,.93);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  transition:background 300ms var(--ease);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:100%;max-width:1280px;margin:0 auto;padding:0 48px;
+}
+.nav-logo{
+  font-family:var(--serif);font-size:1.1875rem;font-weight:500;
+  color:var(--teal);letter-spacing:-.01em;
+}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:32px;align-items:center;}
+.nav-link{
+  font-family:var(--label);font-size:.66rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--fg3);
+  transition:color 180ms var(--ease);
+}
+.nav-link:hover{color:var(--teal);}
+.nav-login{
+  color:var(--teal);
+  border:1px solid rgba(15,94,112,.3);
+  padding:6px 14px;
+  transition:border-color 180ms var(--ease);
+}
+.nav-login:hover{border-color:var(--teal);}
+
+/* ═══════════════════════════════════════════════
+   01 HERO
+═══════════════════════════════════════════════ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  padding-top:72px;
+  display:flex;align-items:stretch;
+  background:var(--sage);
+}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;background:transparent;
+}
+.hero-bg::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 86% 8%, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(110% 90% at 4% 96%, rgba(134,177,180,.40) 0%, rgba(134,177,180,0) 55%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  width:100%;max-width:1280px;margin:0 auto;
+  padding:0 48px;
+  display:grid;grid-template-columns:1.18fr .82fr;
+  gap:56px;align-items:center;
+}
+.hero-copy{max-width:620px;padding:72px 0;}
+.hero-h1{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem,4.4vw,4.25rem);
+  font-weight:400;
+  color:var(--teal);
+  line-height:1.06;
+  letter-spacing:-.022em;
+  margin-bottom:24px;
+  text-wrap:balance;
+}
+.hero-body{
+  font-size:1.0625rem;color:var(--fg2);
+  line-height:1.68;max-width:46ch;margin-bottom:36px;
+}
+.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+.hero-portrait{
+  position:relative;z-index:2;
+  justify-self:end;align-self:center;
+  width:min(100%,420px);
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border:1px solid rgba(31,31,31,.08);
+  box-shadow:0 30px 64px -32px rgba(13,66,73,.45);
+}
+.hero-portrait img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 18%;
+}
+@media (max-width:860px){
+  .hero-inner{grid-template-columns:1fr;gap:0;}
+  .hero-copy{padding:64px 0 28px;}
+  .hero-h1{font-size:clamp(2.25rem,9vw,3.25rem);}
+  .hero-portrait{justify-self:start;width:min(100%,300px);margin-bottom:8px;}
+}
+
+/* ═══════════════════════════════════════════════
+   02 RECOGNITION
+═══════════════════════════════════════════════ */
+.recognition{padding:104px 0;background:var(--white);}
+.recog-intro{max-width:60ch;margin-bottom:60px;}
+.recog-h2{
+  font-family:var(--serif);
+  font-size:clamp(1.875rem,3vw,2.625rem);
+  font-weight:400;color:var(--teal);
+  line-height:1.1;letter-spacing:-.02em;margin-bottom:20px;
+}
+.recog-body{font-size:1.0625rem;color:var(--fg2);line-height:1.72;}
+.recog-body + .recog-body{margin-top:14px;}
+
+.recog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.recog-card{
+  border-left:3px solid #d6d1ca;
+  padding:26px;background:#faf9f7;
+  transition:border-left-color 200ms var(--ease),background 200ms var(--ease);
+}
+.recog-card:hover{border-left-color:var(--teal);background:var(--cream);}
+.recog-num{
+  font-family:var(--label);font-size:.66rem;font-weight:600;
+  color:var(--steel);letter-spacing:.18em;margin-bottom:14px;
+}
+.recog-title{
+  font-family:var(--serif);font-size:1.1875rem;font-weight:400;
+  color:var(--teal);line-height:1.28;margin-bottom:10px;
+}
+.recog-text{font-size:.9375rem;color:var(--fg3);line-height:1.6;}
+.recog-statement{
+  background:var(--teal);color:var(--cream);
+  padding:30px;display:flex;flex-direction:column;justify-content:center;
+}
+.recog-statement .gold-rule{margin:0 0 16px;}
+.recog-statement p{font-family:var(--serif);font-size:1.1875rem;font-weight:400;line-height:1.42;}
+@media (max-width:900px){.recog-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.recog-grid{grid-template-columns:1fr;}}
+
+/* ═══════════════════════════════════════════════
+   03 REFRAME / DIAGNOSIS
+═══════════════════════════════════════════════ */
+.reframe{padding:108px 0;background:var(--forest);}
+.reframe-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:72px;align-items:start;
+}
+.reframe-h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.2vw,2.875rem);
+  font-weight:400;color:var(--cream);
+  line-height:1.12;letter-spacing:-.02em;
+  text-wrap:balance;
+}
+.reframe-body{
+  font-size:1.0625rem;color:rgba(243,241,236,.82);
+  line-height:1.74;
+}
+.reframe-body + .reframe-body{margin-top:18px;}
+.reframe-body strong{color:var(--cream);font-weight:500;}
+.reframe-callout{
+  margin-top:40px;
+  padding:32px 36px;
+  background:rgba(255,255,255,.05);
+  border-left:3px solid var(--gold);
+}
+.reframe-callout p{
+  font-family:var(--serif);font-size:1.1875rem;font-weight:400;
+  color:var(--cream);line-height:1.55;
+}
+@media (max-width:860px){
+  .reframe-grid{grid-template-columns:1fr;gap:36px;}
+}
+
+/* ═══════════════════════════════════════════════
+   04 CASE STUDY
+═══════════════════════════════════════════════ */
+.casestudy{padding:104px 0;background:var(--white);}
+.cs-head{
+  display:grid;grid-template-columns:1fr auto;
+  gap:32px;align-items:end;margin-bottom:48px;
+}
+.cs-client-label{
+  font-family:var(--label);font-size:.66rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.18em;color:var(--steel);
+}
+.cs-h2{
+  font-family:var(--serif);
+  font-size:clamp(1.625rem,2.8vw,2.25rem);
+  font-weight:400;color:var(--teal);
+  line-height:1.15;letter-spacing:-.02em;
+  margin:12px 0 10px;
+}
+.cs-intro{font-size:.9375rem;color:var(--fg2);max-width:52ch;line-height:1.65;}
+.cs-tabs-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:10px;flex-shrink:0;}
+.cs-tabs-hint{
+  font-family:var(--label);font-size:.66rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--steel);
+  display:flex;align-items:center;gap:7px;
+}
+.cs-tabs{display:flex;border:1px solid rgba(15,94,112,.4);flex-shrink:0;}
+.cs-tab{
+  padding:13px 24px;background:#faf9f7;color:var(--teal);
+  border:none;font-family:var(--sans);font-size:.66rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;cursor:pointer;
+  transition:all 180ms var(--ease);
+}
+.cs-tab + .cs-tab{border-left:1px solid rgba(15,94,112,.4);}
+.cs-tab:not(.active):hover{background:var(--sage);}
+.cs-tab.active{background:var(--teal);color:var(--white);}
+.cs-panel{display:none;grid-template-columns:.72fr 1.28fr;gap:56px;align-items:start;}
+.cs-panel.active{display:grid;}
+.cs-photo{overflow:hidden;aspect-ratio:3/4;border:1.5px solid #dedad4;}
+.cs-photo img{width:100%;height:100%;object-fit:cover;object-position:center;}
+.cs-panel-label{
+  font-family:var(--label);font-size:.66rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.16em;
+  color:var(--fg3);margin-bottom:24px;
+}
+.cs-items{display:flex;flex-direction:column;}
+.cs-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);}
+.cs-item:last-child{border-bottom:none;}
+.cs-n{
+  font-family:var(--label);font-size:.7rem;font-weight:600;
+  color:var(--steel);letter-spacing:.14em;
+  flex-shrink:0;padding-top:3px;min-width:22px;
+}
+.cs-n.teal{color:var(--teal);}
+.cs-item-title{font-family:var(--serif);font-size:1.125rem;font-weight:400;color:var(--teal);margin-bottom:6px;line-height:1.3;}
+.cs-item-text{font-size:.9375rem;color:var(--fg2);line-height:1.6;}
+.cs-conclusion{
+  margin-top:48px;padding-top:36px;border-top:1px solid var(--line);
+  font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.625rem);
+  font-weight:400;color:var(--teal);line-height:1.4;max-width:64ch;
+}
+.cs-cta-row{
+  margin-top:48px;padding-top:36px;
+  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;gap:32px;
+}
+.cs-pullquote{
+  font-family:var(--serif);font-size:1.25rem;
+  color:var(--teal);max-width:54ch;line-height:1.4;
+}
+.cs-pullquote small{
+  display:block;font-family:var(--sans);font-size:.85rem;
+  color:var(--fg3);margin-top:12px;letter-spacing:.01em;line-height:1.6;
+}
+
+/* ═══════════════════════════════════════════════
+   05 METHOD
+═══════════════════════════════════════════════ */
+.method{padding:104px 0;background:var(--cream);}
+.method-head{max-width:54ch;margin-bottom:8px;}
+.method-h2{
+  font-family:var(--serif);
+  font-size:clamp(1.875rem,3vw,2.625rem);
+  font-weight:400;color:var(--teal);
+  line-height:1.1;letter-spacing:-.02em;margin-top:8px;margin-bottom:16px;
+}
+.method-intro{font-size:1rem;color:var(--fg2);line-height:1.7;}
+.method-list{margin-top:48px;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid rgba(31,31,31,.14);}
+.method-step{
+  padding:30px 22px;
+  border-right:1px solid rgba(31,31,31,.14);
+}
+.method-step:last-child{border-right:none;}
+.method-num{
+  font-family:var(--serif);font-size:2.25rem;font-weight:400;
+  color:rgba(15,94,112,.22);line-height:1;margin-bottom:14px;
+}
+.method-name{
+  font-family:var(--serif);font-size:1.25rem;font-weight:400;
+  color:var(--teal);line-height:1.1;margin-bottom:10px;
+}
+.method-desc{font-size:.875rem;color:var(--fg2);line-height:1.6;}
+@media (max-width:900px){
+  .method-list{grid-template-columns:1fr 1fr;}
+  .method-step{border-bottom:1px solid rgba(31,31,31,.14);}
+  .method-step:nth-child(2n){border-right:none;}
+}
+@media (max-width:560px){
+  .method-list{grid-template-columns:1fr;}
+  .method-step{border-right:none;}
+}
+
+/* ═══════════════════════════════════════════════
+   06 OFFERS
+═══════════════════════════════════════════════ */
+.services{padding:104px 0;background:var(--white);}
+.services-head{margin-bottom:48px;}
+.services-h2{
+  font-family:var(--serif);
+  font-size:clamp(1.875rem,3vw,2.625rem);
+  font-weight:400;color:var(--teal);
+  line-height:1.1;letter-spacing:-.02em;margin-top:8px;
+}
+.services-lead{font-size:1.0625rem;color:var(--fg2);line-height:1.7;max-width:64ch;margin-top:16px;}
+.services-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  grid-template-rows:auto auto auto 1fr;
+  column-gap:24px;
+  align-items:stretch;
+}
+.service-card{
+  display:grid;grid-row:span 4;grid-template-rows:subgrid;
+  background:#faf9f7;border:1.5px solid #dedad4;
+  padding:48px 44px;
+  transition:background 200ms var(--ease),border-color 200ms var(--ease);
+}
+.service-card:hover{background:var(--sage);border-color:var(--steel);}
+.service-num{
+  font-family:var(--label);font-size:.66rem;font-weight:600;
+  color:var(--steel);letter-spacing:.18em;margin-bottom:22px;
+}
+.service-title{
+  font-family:var(--serif);font-size:1.625rem;font-weight:400;
+  color:var(--teal);line-height:1.2;margin-bottom:8px;
+}
+.service-price{
+  font-family:var(--label);font-size:.875rem;font-weight:600;
+  color:var(--gold);margin-bottom:20px;
+}
+.service-body{font-size:.96875rem;color:var(--fg2);line-height:1.68;padding-bottom:28px;}
+.service-foot{padding-top:22px;border-top:1px solid #dedad4;align-self:start;}
+.service-link{
+  font-family:var(--label);font-size:.7rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.12em;color:var(--teal);
+  transition:gap 180ms var(--ease);
+  display:inline-flex;gap:8px;align-items:center;
+}
+.service-link:hover{color:var(--forest);}
+.services-footer{
+  margin-top:44px;padding-top:36px;
+  border-top:1px solid rgba(31,31,31,.1);
+  display:flex;align-items:center;justify-content:space-between;gap:40px;
+}
+.services-footer-note{font-size:1rem;color:var(--fg2);max-width:44ch;}
+@media (max-width:760px){.services-grid{grid-template-columns:1fr;}.service-card{grid-row:auto;display:block;}}
+
+/* ═══════════════════════════════════════════════
+   07 ABOUT
+═══════════════════════════════════════════════ */
+.about{padding:104px 0;background:var(--sage);}
+.about-grid{display:grid;grid-template-columns:0.82fr 1.18fr;gap:72px;align-items:center;}
+.about-photo{overflow:hidden;aspect-ratio:4/5;max-width:380px;box-shadow:0 30px 64px -36px rgba(13,66,73,.5);}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 12%;}
+.about-h2{
+  font-family:var(--serif);font-size:clamp(1.875rem,3vw,2.625rem);
+  font-weight:400;color:var(--teal);
+  line-height:1.1;letter-spacing:-.02em;margin-bottom:20px;
+}
+.about-body{font-size:1.0625rem;color:var(--fg2);line-height:1.74;margin-bottom:16px;}
+.about-body strong{color:var(--teal);font-weight:500;}
+
+/* ═══════════════════════════════════════════════
+   08 TESTIMONIALS
+═══════════════════════════════════════════════ */
+.testimonials{padding:88px 0;background:var(--white);}
+.testimonials-head{margin-bottom:36px;}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+.footer{background:var(--forest);padding:72px 0 36px;}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;padding-bottom:48px;
+  border-bottom:1px solid rgba(255,255,255,.09);margin-bottom:28px;
+}
+.footer-brand{
+  font-family:var(--serif);font-size:1.375rem;font-weight:400;
+  color:var(--cream);margin-bottom:14px;
+}
+.footer-brand span{color:var(--gold);}
+.footer-tagline{font-size:.875rem;color:rgba(243,241,236,.5);line-height:1.6;max-width:26ch;}
+.footer-col-head{
+  font-family:var(--label);font-size:.62rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.2em;
+  color:var(--steel);margin-bottom:16px;
+}
+.footer-link{
+  display:block;font-size:.875rem;
+  color:rgba(243,241,236,.6);margin-bottom:8px;
+  transition:color 180ms var(--ease);
+}
+.footer-link:hover{color:var(--cream);}
+.footer-social{display:flex;gap:16px;margin-top:16px;}
+.footer-social a{color:rgba(243,241,236,.6);display:inline-flex;transition:color 180ms var(--ease);}
+.footer-social a:hover{color:var(--gold);}
+.footer-social svg{width:20px;height:20px;display:block;fill:currentColor;}
+.footer-legal a{color:rgba(243,241,236,.45);text-decoration:none;transition:color 180ms var(--ease);}
+.footer-legal a:hover{color:var(--cream);}
+.footer-legal{
+  display:flex;justify-content:space-between;
+  font-size:.69rem;color:rgba(243,241,236,.3);
+  text-transform:uppercase;letter-spacing:.08em;
+}
+
+::selection{background:var(--teal);color:var(--cream);}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Romy M<span>.</span></div>
+    <div class="nav-links">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#case-study">Case Study</a>
+      <a class="nav-link nav-login" href="https://login.romymofficial.com/" target="_blank">Log in →</a>
+    </div>
+    <a class="btn btn-solid" href="https://tidycal.com/3zkp0x3/30-minute-discovery" target="_blank">Book a discovery call</a>
+  </div>
+</nav>
+
+<!-- ═══ 01 HERO ════════════════════════════════ -->
+<section class="hero" data-screen-label="01 Hero" id="hero">
+  <div class="hero-bg">
+    <!-- TO ADD BACKGROUND VIDEO: drop your clip at assets/hero-bg.mp4,
+         then delete the two comment markers around the <source> line below.
+         Until then, the branded teal field shows. -->
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+      <!-- <source src="assets/hero-bg.mp4" type="video/mp4"> -->
+    </video>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">Growth Operations · AI Integration</div>
+      <div class="gold-rule"></div>
+      <h1 class="hero-h1">You scaled the business. Now your infrastructure needs to catch up.</h1>
+      <p class="hero-body">Operational redesign for founder-led businesses.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="https://tidycal.com/3zkp0x3/30-minute-discovery" target="_blank">Book a discovery call</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <img src="assets/Romy16.png" alt="Romy Mueller, growth operations and AI integration consultant" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02 RECOGNITION ═════════════════════════ -->
+<section class="recognition" data-screen-label="02 Recognition">
+  <div class="wrap">
+    <div class="recog-intro">
+      <h2 class="recog-h2">From the outside, your business looks rock solid.</h2>
+      <p class="recog-body">Behind the scenes, too much still depends on you, manual workarounds, and systems that were implemented when the business was half the size.</p>
+    </div>
+    <div class="recog-grid">
+      <div class="recog-card">
+        <div class="recog-num">01</div>
+        <div class="recog-title">New tools keep getting stacked on top of old ones</div>
+        <p class="recog-text">Nobody is fully sure what's running where anymore. Half the backend is built for an earlier version of the business.</p>
+      </div>
+      <div class="recog-card">
+        <div class="recog-num">02</div>
+        <div class="recog-title">Nobody fully trusts the information anymore</div>
+        <p class="recog-text">Reporting lives across different platforms. Client data exists in multiple places. People are checking 3 tools, spreadsheets, and inboxes just to piece together what's actually happening.</p>
+      </div>
+      <div class="recog-card">
+        <div class="recog-num">03</div>
+        <div class="recog-title">The business still depends too heavily on you</div>
+        <p class="recog-text">The team can do the work, but decisions, approvals, and next steps still keep coming back to you because too much of the business was never properly documented.</p>
+      </div>
+      <div class="recog-card">
+        <div class="recog-num">04</div>
+        <div class="recog-title">Your team is individually capable, but collectively inconsistent</div>
+        <p class="recog-text">Your content person has their process. Your VA introduced another. Someone else set up workflows a year ago and nobody ever reviewed them as the business evolved.</p>
+      </div>
+      <div class="recog-card">
+        <div class="recog-num">05</div>
+        <div class="recog-title">You hire to compensate for a lack of systems</div>
+        <p class="recog-text">It looks like growth. But in reality, people are compensating for the lack of operational structure — manually doing things that should be systematised or automated.</p>
+      </div>
+      <div class="recog-statement"><div class="gold-rule"></div><p>That's the point where your backend needs a redesign, not just another patch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03 REFRAME / DIAGNOSIS ═════════════════ -->
+<section class="reframe" data-screen-label="03 Reframe">
+  <div class="wrap">
+    <div class="reframe-grid">
+      <div>
+        <h2 class="reframe-h2">The backend was never designed. It accumulated.</h2>
+      </div>
+      <div>
+        <p class="reframe-body"><strong>The problem isn't growth. It's that your business operations never caught up.</strong></p>
+        <p class="reframe-body">Most founder-led businesses don't get redesigned as they scale. They accumulate. New tools solve immediate problems. New hires introduce different ways of working. Processes evolve around whatever the business needed at the time.</p>
+        <p class="reframe-body">At a certain point, keeping the business running starts taking far more effort than it should.</p>
+        <div class="reframe-callout">
+          <p>That's the point where the backend needs a redesign, not just another patch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 CASE STUDY ══════════════════════════ -->
+<section class="casestudy" data-screen-label="04 Case Study" id="case-study">
+  <div class="wrap">
+    <div class="cs-head">
+      <div>
+        <div class="cs-client-label">Case study · Swoop Baby</div>
+        <div class="steel-rule"></div>
+        <h2 class="cs-h2">Scaling fast on systems that weren't built for it.</h2>
+        <p class="cs-intro">Swoop Baby had strong demand and a rapidly scaling team, but the systems weren't built to handle either.</p>
+      </div>
+      <div class="cs-tabs">
+        <button class="cs-tab active" id="tab-before" onclick="csTab('before')">The challenge</button>
+        <button class="cs-tab" id="tab-after" onclick="csTab('after')">The transformation</button>
+      </div>
+    </div>
+
+    <div class="cs-panel active" id="cs-before">
+      <div class="cs-photo">
+        <img src="assets/swoop-baby.jpg" alt="Swoop Baby" loading="lazy">
+      </div>
+      <div>
+        <div class="cs-panel-label">A business built on its founder, not on systems</div>
+        <div class="cs-items">
+          <div class="cs-item">
+            <span class="cs-n">01</span>
+            <div>
+              <div class="cs-item-title">The founder as single point of failure</div>
+              <p class="cs-item-text">Every communication from first enquiry to final follow-up ran through one person. When that person was at capacity, so was the business.</p>
+            </div>
+          </div>
+          <div class="cs-item">
+            <span class="cs-n">02</span>
+            <div>
+              <div class="cs-item-title">No way to see what was actually happening</div>
+              <p class="cs-item-text">Client information was copy-pasted from checkout into a Google Sheet. Delivery tracked manually. No consolidated view of what was coming in, what was being delivered, or where things stood.</p>
+            </div>
+          </div>
+          <div class="cs-item">
+            <span class="cs-n">03</span>
+            <div>
+              <div class="cs-item-title">A team operating from memory</div>
+              <p class="cs-item-text">Coordination ran across a Google Sheet, WhatsApp, and team messages. Staying aligned across client delivery required manual check-ins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-panel" id="cs-after">
+      <div class="cs-photo">
+        <img src="assets/swoop-baby.jpg" alt="Swoop Baby" loading="lazy">
+      </div>
+      <div>
+        <div class="cs-panel-label">A new operational foundation built for where the business was going</div>
+        <div class="cs-items">
+          <div class="cs-item">
+            <span class="cs-n teal">01</span>
+            <div>
+              <div class="cs-item-title">Operations that run without the founder's intervention</div>
+              <p class="cs-item-text">Intake, onboarding, and follow-up no longer depended on manual coordination from the founder or team.</p>
+            </div>
+          </div>
+          <div class="cs-item">
+            <span class="cs-n teal">02</span>
+            <div>
+              <div class="cs-item-title">One system the whole team works from</div>
+              <p class="cs-item-text">Every file, communication, and process in one place. The full client journey tracked end-to-end. At any point, the team knows exactly where each client is and what comes next.</p>
+            </div>
+          </div>
+          <div class="cs-item">
+            <span class="cs-n teal">03</span>
+            <div>
+              <div class="cs-item-title">Visibility across the business</div>
+              <p class="cs-item-text">Clear view of call volume, conversion rates, and service delivery patterns. 18,000 followers flowing into a measurable lead pathway. The business can now plan capacity and make decisions from data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-conclusion">The team can now operate without the founder needing to stay across every moving part just to keep things running.</div>
+  </div>
+</section>
+
+<!-- ═══ 05 METHOD ══════════════════════════════ -->
+<section class="method" data-screen-label="05 Method" id="method">
+  <div class="wrap">
+    <div class="method-head">
+      <h2 class="method-h2">My approach</h2>
+    </div>
+    <div class="method-list">
+      <div class="method-step">
+        <div class="method-num">01</div>
+        <div class="method-name">Diagnose</div>
+        <p class="method-desc">First, we map everything the business actually runs on: the tools, the handoffs, the places where work keeps boomeranging back to you.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-num">02</div>
+        <div class="method-name">Architect</div>
+        <p class="method-desc">Then we design how the business should actually operate. Who owns what decisions, how information flows, what the team should be able to handle without involving you.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-num">03</div>
+        <div class="method-name">Stabilise</div>
+        <p class="method-desc">Let's clean up some of the operational clutter. I consolidate scattered systems and establish one source of truth the team works from.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-num">04</div>
+        <div class="method-name">Integrate</div>
+        <p class="method-desc">Now the real fun starts. I build the connections and start automating. Work starts moving without everything coming back to you.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-num">05</div>
+        <div class="method-name">Scale</div>
+        <p class="method-desc">Let's scale, baby!<br>The final stage where the business is structured clearly enough for AI and automation to really make an impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06 OFFERS ══════════════════════════════ -->
+<section class="services" data-screen-label="06 Offers" id="services">
+  <div class="wrap">
+    <div class="services-head">
+      <h2 class="services-h2">Two ways I support scaling founders.</h2>
+      <p class="services-lead">You don't just need more hands on deck. You need someone senior enough to think strategically and execute without needing everything spelled out and double-checked.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3 class="service-title">Growth Ops Intensive</h3>
+        <div class="service-price">Estimated $1,500 USD · Scope-dependent<span style="display:block;font-weight:400;color:var(--fg3);font-size:.8125rem;margin-top:5px;">Please reach out for a custom quote.</span></div>
+        <p class="service-body">Focussed on one problem area that's costing you time, energy and $$. Done-for-you with 1 week of support after we wrap.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3 class="service-title">Growth Ops Partnership</h3>
+        <div class="service-price">$2,500 USD / month · 3-month minimum</div>
+        <p class="service-body">The ongoing operational partnership. I work directly inside the business to fix what's slowing it down, build better operational structure, and put the systems and automations in place to support the next stage of growth.</p>
+      </div>
+    </div>
+    <div class="services-footer">
+      <p class="services-footer-note">Book a call to talk through what you need.</p>
+      <a class="btn btn-solid" href="https://tidycal.com/3zkp0x3/30-minute-discovery" target="_blank">Book a discovery call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 07 ABOUT ═══════════════════════════════ -->
+<section class="about" data-screen-label="07 About" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="assets/Romy9.png" alt="Romy Mueller, growth operations consultant" loading="lazy">
+      </div>
+      <div>
+        <div class="eyebrow">About Romy</div>
+        <div class="gold-rule"></div>
+        <h2 class="about-h2">Hey, I'm Romy.</h2>
+        <p class="about-body">I spent fifteen years inside global companies like <strong>Reckitt Benckiser, SC&nbsp;Johnson, and Coca-Cola</strong> working across brand, marketing operations, and innovation. Which meant big budgets, big teams and a ridiculous number of stakeholders and dependencies.</p>
+        <p class="about-body">After my last stint, I decided I was completely done with corporate and moved into online business, where I realised pretty quickly that everyone is obsessed with visibility and virality but neglects operations.</p>
+        <p class="about-body">Today I work with founders whose businesses grew faster than the operations supporting them. Who know growth eventually stops being a marketing problem and becomes an operational one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 08 TESTIMONIALS ════════════════════════ -->
+<section class="testimonials" data-screen-label="08 Testimonials">
+  <div class="wrap">
+    <div class="testimonials-head">
+      <div class="eyebrow">What clients say</div>
+      <div class="gold-rule" style="margin-bottom:0;"></div>
+    </div>
+    <div class="feedspace-embed" data-id="11176c1c-0e3c-4e57-b621-e46ea313819e"></div>
+    <script src="https://js.feedspace.io/v1/embed/embed.min.js" type="text/javascript" async></script>
+  </div>
+</section>
+
+<!-- ═══ 09 CTA BAND ════════════════════════════ -->
+<section style="background:var(--sage);padding:80px 0;" data-screen-label="09 CTA Band">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:center;text-align:center;">
+    <p style="font-family:var(--serif);font-size:clamp(1.5rem,2.8vw,2.25rem);font-weight:400;color:var(--teal);line-height:1.25;letter-spacing:-.02em;max-width:54ch;">If your backend hasn't kept pace with the business, let's talk.</p>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ══════════════════════════════════ -->
+<footer class="footer" data-screen-label="10 Footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Romy M<span>.</span></div>
+        <p class="footer-tagline">Growth Operations &amp; AI Integration</p>
+      </div>
+      <div>
+        <div class="footer-col-head">Work</div>
+        <a class="footer-link" href="#about">About</a>
+        <a class="footer-link" href="#services">Services</a>
+        <a class="footer-link" href="#case-study">Case Study</a>
+      </div>
+      <div>
+        <div class="footer-col-head">Resources</div>
+        <a class="footer-link" href="https://login.romymofficial.com/" target="_blank">Course Login</a>
+      </div>
+      <div>
+        <div class="footer-col-head">Contact</div>
+        <a class="footer-link" href="mailto:hello@romymofficial.com">hello@romymofficial.com</a>
+        <a class="footer-link" href="https://tidycal.com/3zkp0x3/30-minute-discovery" target="_blank">Book a call</a>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/romym_official/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.67 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.67-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13-.67-.67-1.34-1.07-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-10.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a>
+          <a href="https://www.linkedin.com/in/romymueller/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://www.tiktok.com/@romymofficial" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 RomyM Official</span>
+      <span><a href="Terms.html">Terms &amp; Conditions</a> · <a href="Privacy.html">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function csTab(panel) {
+  document.querySelectorAll('.cs-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.cs-tab').forEach(function(t){t.classList.remove('active');});
+  document.getElementById('cs-'+panel).classList.add('active');
+  document.getElementById('tab-'+panel).classList.add('active');
+}
+</script>
+</body>
+</html>

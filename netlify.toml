@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/terms"
+  to = "/Terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/Privacy.html"
+  status = 200
