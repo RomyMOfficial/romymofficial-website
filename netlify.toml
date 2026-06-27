@@ -1,4 +1,9 @@
 [[redirects]]
+  from = "/scale-ready-os"
+  to = "/scale-ready-os.html"
+  status = 200
+
+[[redirects]]
   from = "/terms"
   to = "/Terms.html"
   status = 200
