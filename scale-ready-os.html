@@ -212,7 +212,6 @@ a{color:inherit;text-decoration:none;}
   margin:0 0 32px;
 }
 .stages-grid{display:grid;grid-template-columns:1fr .8fr;gap:52px;align-items:start;}
-.stages-grid--full{grid-template-columns:1fr;}
 /* Accordion */
 .acc-item{border-top:1px solid rgba(15,94,112,.18);}
 .acc-cap{border-top:1px solid rgba(15,94,112,.18);}
@@ -548,7 +547,7 @@ a{color:inherit;text-decoration:none;}
       <span class="sec-label-text">How the 90 days work</span>
     </div>
     <h2>Three stages, installed in 90 days</h2>
-    <div class="stages-grid stages-grid--full">
+    <div class="stages-grid">
       <div>
         <div class="acc-item">
           <button class="acc-btn" onclick="toggleStage(0)" aria-expanded="true" id="stage-btn-0">
@@ -581,6 +580,9 @@ a{color:inherit;text-decoration:none;}
           <p class="acc-body" id="stage-body-2">We install the tech foundations, build the workflows, and use AI to scale support, so less of the day-to-day sits with you or your team. AI isn't here to replace the work only you can do; it's here to stop you spending your best energy on work that could be handled faster, more consistently, or without you touching it at all.</p>
         </div>
         <div class="acc-cap"></div>
+      </div>
+      <div class="stages-model">
+        <img src="assets/magic-model-t.png" alt="The Scale-Ready Operating System model" style="display:block;width:100%;height:auto;">
       </div>
     </div>
     <div class="stages-closing">
