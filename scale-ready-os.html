@@ -108,31 +108,31 @@ a{color:inherit;text-decoration:none;}
 ═══════════════════════════════════════════════ */
 .wl-hero{
   background:var(--forest);
-  padding:150px 0 86px; /* 72px nav + 78px top padding */
+  padding:108px 0 52px;
   text-align:center;
 }
 .wl-hero-eyebrow{
   font-family:var(--label);font-size:.8125rem;font-weight:600;
   letter-spacing:.24em;text-transform:uppercase;color:var(--steel);
-  margin-bottom:26px;
+  margin-bottom:16px;
 }
 .wl-hero-h1{
   font-family:var(--serif);
-  font-size:clamp(2.25rem,4vw,2.875rem);
+  font-size:clamp(2rem,3.6vw,2.625rem);
   font-weight:500;color:var(--cream);
   letter-spacing:-.02em;line-height:1.1;
-  margin:0 auto 20px;max-width:18ch;
+  margin:0 auto 12px;max-width:18ch;
 }
 .wl-hero-h1 em{color:var(--gold);font-style:normal;}
 .wl-hero-tagline{
   font-family:var(--serif);font-style:italic;
-  font-size:1.4375rem;line-height:1.35;
-  color:var(--cream);margin:0 auto 22px;
+  font-size:1.3125rem;line-height:1.35;
+  color:var(--cream);margin:0 auto 12px;
 }
 .wl-hero-sub{
-  font-family:var(--sans);font-size:1rem;line-height:1.7;
+  font-family:var(--sans);font-size:.9375rem;line-height:1.65;
   color:rgba(243,241,236,.66);
-  margin:0 auto 38px;max-width:48ch;
+  margin:0 auto 26px;max-width:48ch;
 }
 .wl-card{
   max-width:660px;margin:0 auto;
@@ -410,10 +410,40 @@ a{color:inherit;text-decoration:none;}
 @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;gap:24px;}.footer-legal{flex-direction:column;gap:8px;}}
 
+/* ── Model diagram ────────────────────────────── */
+.model-diagram{
+  border:1px solid rgba(15,94,112,.2);
+  padding:28px 24px;
+  display:flex;flex-direction:column;
+}
+.model-step{
+  background:var(--cream);padding:18px 20px;
+  border-left:3px solid var(--gold);
+}
+.model-step-num{
+  font-family:var(--serif);font-size:1.5rem;color:var(--gold);line-height:1;margin-bottom:3px;
+}
+.model-step-label{
+  font-family:var(--label);font-size:.625rem;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:#9a7322;margin-bottom:5px;
+}
+.model-step-name{font-family:var(--serif);font-size:1.0625rem;color:var(--teal);}
+.model-connector{
+  width:1px;height:20px;background:var(--gold);
+  margin:0 auto;flex-shrink:0;
+}
+.model-outcome{
+  margin-top:20px;padding:14px 20px;
+  background:var(--teal);
+  font-family:var(--label);font-size:.6875rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--cream);
+  text-align:center;
+}
+
 /* ── Mobile ───────────────────────────────────── */
 @media(max-width:640px){
   .wrap{padding:0 20px;}
-  .wl-hero{padding:130px 0 64px;}
+  .wl-hero{padding:100px 0 44px;}
   .wl-card{padding:24px 20px 28px;}
   .wl-form{flex-direction:column;}
   .wl-input,.wl-input--email{flex:none;width:100%;}
@@ -432,19 +462,19 @@ a{color:inherit;text-decoration:none;}
       <a class="nav-link" href="/#about">About</a>
       <a class="nav-link" href="/#services">Services</a>
       <a class="nav-link" href="/#case-study">Case Study</a>
+      <a class="nav-link" href="scale-ready-os.html" style="color:var(--gold);">Join Scale Ready OS</a>
       <a class="nav-link" href="https://login.romymofficial.com/" target="_blank">Log in →</a>
     </div>
-    <a class="nav-cta" href="#signup">Join The Waitlist</a>
   </div>
 </nav>
 
 <!-- ═══ 01 HERO / SIGNUP ════════════════════════ -->
 <section class="wl-hero" id="signup">
   <div class="wrap">
-    <div class="wl-hero-eyebrow">Joining the waitlist</div>
+    <div class="wl-hero-eyebrow">Waitlist now open</div>
     <h1 class="wl-hero-h1">The <em>Scale-Ready Operating System™</em></h1>
     <p class="wl-hero-tagline">Serve <span style="border-bottom:2px solid var(--gold);">double</span> the clients in <span style="border-bottom:2px solid var(--gold);">half</span> the time.</p>
-    <p class="wl-hero-sub">Intake opens August 1st and is capped at 10 founding coaches. Get on the list and be the first to know.</p>
+    <p class="wl-hero-sub">We start August 1st. Intake is capped at 10 founding coaches. Get on the list and be the first to know.</p>
 
     <div class="wl-card">
       <div class="wl-card-label">
@@ -552,7 +582,26 @@ a{color:inherit;text-decoration:none;}
         <div class="acc-cap"></div>
       </div>
       <div class="stages-model">
-        <img src="assets/magic-model-t.png" alt="The Scale-Ready Operating System model">
+        <div class="model-diagram">
+          <div class="model-step">
+            <div class="model-step-num">01</div>
+            <div class="model-step-label">Stage 1 · Structure</div>
+            <div class="model-step-name">A centralised backend</div>
+          </div>
+          <div class="model-connector"></div>
+          <div class="model-step">
+            <div class="model-step-num">02</div>
+            <div class="model-step-label">Stage 2 · Systems</div>
+            <div class="model-step-name">Connected lead &amp; client systems</div>
+          </div>
+          <div class="model-connector"></div>
+          <div class="model-step">
+            <div class="model-step-num">03</div>
+            <div class="model-step-label">Stage 3 · AI</div>
+            <div class="model-step-name">AI capacity</div>
+          </div>
+          <div class="model-outcome">Scale-Ready Operating System™</div>
+        </div>
       </div>
     </div>
     <div class="stages-closing">
@@ -565,6 +614,14 @@ a{color:inherit;text-decoration:none;}
 <!-- ═══ 05 WHAT'S INSIDE ═════════════════════════ -->
 <section class="wl-inside">
   <div class="wrap">
+    <div style="text-align:center;margin-bottom:36px;">
+      <div class="sec-label" style="justify-content:center;">
+        <span class="sec-label-rule"></span>
+        <span class="sec-label-text">What you get</span>
+        <span class="sec-label-rule"></span>
+      </div>
+      <h2 style="font-family:var(--serif);font-size:1.875rem;font-weight:400;color:var(--teal);letter-spacing:-.02em;line-height:1.12;margin:0 auto;max-width:34ch;">Everything you need to build your Scale-Ready OS in 90 days</h2>
+    </div>
     <div class="first-win">
       <div class="sec-label" style="justify-content:center;">
         <span class="sec-label-rule"></span>
@@ -572,7 +629,7 @@ a{color:inherit;text-decoration:none;}
         <span class="sec-label-rule"></span>
       </div>
       <div class="first-win-title">Done-For-You Scale Ready Action Plan</div>
-      <p class="first-win-body">A personalized next-steps plan built around your specific business, tools and current bottlenecks, delivered within <span style="border-bottom:2px solid var(--gold);white-space:nowrap;">7 business days</span> of joining.</p>
+      <p class="first-win-body">Before we build anything, I audit your current setup — your tools, your flows, where things are breaking down — and deliver a personalised action plan. Your exact next steps, prioritised by where you're leaking the most time. Delivered within <span style="border-bottom:2px solid var(--gold);white-space:nowrap;">7 business days</span> of joining. Built around your business, not a generic framework.</p>
     </div>
     <div class="inside-grid">
       <div>
@@ -712,6 +769,9 @@ a{color:inherit;text-decoration:none;}
         <p class="perk-text">If your roadmap doesn't give you the clarity you need, tell me within 7 days and I'll pay you back.</p>
       </div>
     </div>
+    <div style="margin-top:36px;">
+      <a href="#signup" style="display:inline-block;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);background:var(--gold);padding:16px 44px;transition:background 180ms var(--ease);" onmouseover="this.style.background='#c08f24'" onmouseout="this.style.background='#d3a032'">Join the waitlist now</a>
+    </div>
   </div>
 </section>
 
@@ -776,7 +836,6 @@ a{color:inherit;text-decoration:none;}
 <section class="wl-cta">
   <div class="wrap">
     <h2>Ready to stop being the human glue?</h2>
-    <p>Join the waitlist for the founding round. We'll start with the backend leaks costing you the most time right now.</p>
     <a class="cta-btn" href="#signup">Sign me up!</a>
   </div>
 </section>
