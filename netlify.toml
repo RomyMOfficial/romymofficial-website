@@ -2,6 +2,7 @@
   from = "/scale-ready-os"
   to = "/scale-ready-os-waitlist-page.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/terms"
