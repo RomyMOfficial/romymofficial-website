@@ -131,6 +131,11 @@ a{color:inherit;text-decoration:none;}
   transition:border-color 180ms var(--ease);
 }
 .nav-login:hover{border-color:var(--teal);}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:28px;height:28px;background:none;border:none;cursor:pointer;padding:0;}
+.nav-toggle-bar{display:block;width:100%;height:2px;background:var(--teal);transition:transform 180ms var(--ease),opacity 180ms var(--ease);}
+.nav-toggle.open .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle.open .nav-toggle-bar:nth-child(2){opacity:0;}
+.nav-toggle.open .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* ═══════════════════════════════════════════════
    01 HERO
@@ -514,8 +519,11 @@ a{color:inherit;text-decoration:none;}
 /* Nav */
 @media (max-width:700px){
   .nav-inner{padding:0 20px;}
-  .nav-links{display:none;}
-  .nav .btn{padding:10px 18px;font-size:.62rem;}
+  .nav-toggle{display:flex;}
+  .nav-links{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--white);padding:8px 20px 20px;border-bottom:1px solid var(--line);}
+  .nav-links.open{display:flex;}
+  .nav-link{padding:12px 0;width:100%;}
+  .nav > .nav-inner > .btn{display:none;}
 }
 
 /* Global horizontal padding */
@@ -580,6 +588,11 @@ a{color:inherit;text-decoration:none;}
       <a class="nav-link nav-login" href="https://login.romymofficial.com/" target="_blank">Log in →</a>
     </div>
     <a class="btn btn-solid" href="https://tidycal.com/3zkp0x3/30-minute-discovery" target="_blank">Book a discovery call</a>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
   </div>
 </nav>
 
@@ -883,6 +896,15 @@ a{color:inherit;text-decoration:none;}
 </footer>
 
 <script>
+function toggleNav(){
+  var links = document.querySelector('.nav-links');
+  var btn = document.getElementById('navToggle');
+  var isOpen = links.classList.contains('open');
+  links.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
+
 function csTab(panel) {
   document.querySelectorAll('.cs-panel').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.cs-tab').forEach(function(t){t.classList.remove('active');});

@@ -97,6 +97,11 @@ a{color:inherit;text-decoration:none;}
 .nav-links{display:flex;align-items:center;gap:32px;}
 .nav-link{font-family:var(--label);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(243,241,236,.72);transition:color 160ms var(--ease);}
 .nav-link:hover{color:var(--cream);}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:28px;height:28px;background:none;border:none;cursor:pointer;padding:0;}
+.nav-toggle-bar{display:block;width:100%;height:2px;background:var(--cream);transition:transform 180ms var(--ease),opacity 180ms var(--ease);}
+.nav-toggle.open .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle.open .nav-toggle-bar:nth-child(2){opacity:0;}
+.nav-toggle.open .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* ── HERO ──────────────────────────────────────────── */
 .wl-hero{background:var(--forest);padding:150px 0 86px;text-align:center;}
@@ -209,8 +214,13 @@ a{color:inherit;text-decoration:none;}
 @media(max-width:700px){
   .wrap{padding:0 24px;}
   .nav-inner{padding:0 24px;}
-  .nav-links{gap:16px;}
+  .nav-toggle{display:flex;}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--forest);padding:8px 24px 20px;border-bottom:1px solid rgba(243,241,236,.14);}
+  .nav-links.open{display:flex;}
+  .nav-link{padding:12px 0;width:100%;}
   .wl-hero{padding:100px 0 60px;}
+  .wl-signup{padding:24px 20px;}
+  .wl-form{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
 }
 @media(max-width:480px){
@@ -233,6 +243,11 @@ a{color:inherit;text-decoration:none;}
       <a class="nav-link" href="#signup" style="color:var(--gold);">Join Scale Ready OS</a>
       <a class="nav-link" href="https://login.romymofficial.com/" target="_blank">Log in</a>
     </div>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
   </div>
 </nav>
 
@@ -249,7 +264,7 @@ a{color:inherit;text-decoration:none;}
         <input type="email" name="email_address" placeholder="Email address" required>
         <button type="submit" class="wl-submit">Sign me up!</button>
       </form>
-      <p class="wl-enrol-note">Enrolment opens September 1st for the founding cohort. Waitlist open until August 15 — join for first access when doors open.</p>
+      <p class="wl-enrol-note">Waitlist open until August 15th. Enrolment opens right after, with the founding cohort starting September 1st.</p>
     </div>
   </div>
 </section>
@@ -531,6 +546,15 @@ a{color:inherit;text-decoration:none;}
 </footer>
 
 <script>
+function toggleNav(){
+  var links = document.querySelector('.nav-links');
+  var btn = document.getElementById('navToggle');
+  var isOpen = links.classList.contains('open');
+  links.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
+
 document.getElementById('wl-form').addEventListener('submit',function(e){
   e.preventDefault();
   const data=new FormData(this);
