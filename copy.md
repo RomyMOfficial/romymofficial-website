@@ -101,9 +101,8 @@ The problem isn't growth. It's that your business operations never caught up.
 
 Most founder-led businesses don't get redesigned as they scale. They accumulate. New tools solve immediate problems. New hires introduce different ways of working. Processes evolve around whatever the business needed at the time.
 
-At a certain point, keeping the business running starts taking far more effort than it should.
-
-That's the point where the backend needs a redesign, not just another patch.
+**[Callout]**
+Keeping the business running starts taking far more effort than it should.
 
 
 ---
