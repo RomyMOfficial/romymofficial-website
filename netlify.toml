@@ -13,3 +13,9 @@
   from = "/privacy"
   to = "/Privacy.html"
   status = 200
+
+[[redirects]]
+  from = "/book"
+  to = "https://tidycal.com/3zkp0x3/30-minute-discovery"
+  status = 302
+  force = true
