@@ -1,4 +1,28 @@
 [[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/scale-ready-os/"
+  to = "/scale-ready-os"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/scale-ready-os-waitlist-page"
+  to = "/scale-ready-os"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/scale-ready-os-waitlist-page.html"
+  to = "/scale-ready-os"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/scale-ready-os"
   to = "/scale-ready-os-waitlist-page.html"
   status = 200

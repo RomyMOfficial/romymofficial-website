@@ -64,12 +64,33 @@
   .prob:hover{background:#f3f1ec;}
   @media (hover:none){ .prob:hover{background:transparent;} }
 
+  .nav-bar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .nav-links{display:flex;align-items:center;gap:28px;}
+  .nav-toggle{display:none;background:none;border:0;padding:12px;margin-right:-12px;cursor:pointer;flex-direction:column;gap:5px;}
+  .nav-toggle span{display:block;width:22px;height:2px;background:#0f5e70;transition:transform 200ms cubic-bezier(.22,.61,.36,1),opacity 150ms linear;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
   @media (max-width:900px){
     .cs-title{white-space:normal !important;}
   }
-  @media (max-width:720px){
+  @media (max-width:1000px){
+    .nav-toggle{display:flex;}
+    .nav-links{display:none;position:absolute;left:0;right:0;top:72px;flex-direction:column;align-items:stretch;gap:0;background:#f3f1ec;border-bottom:1px solid rgba(31,31,31,.1);padding:8px 48px 22px;}
+    .nav-links.is-open{display:flex;}
+    .nav-links a{padding:15px 0;border-bottom:1px solid rgba(31,31,31,.08);}
+    .nav-links a.btn-solid{margin-top:16px;border-bottom:0;justify-content:center;text-align:center;padding:17px 24px;}
+  }
+  @media (max-width:820px){
     .wrap{padding:0 24px;}
-    nav .wrap{height:auto !important;padding-top:14px;padding-bottom:14px;flex-wrap:wrap;}
+    .nav-links{padding-left:24px;padding-right:24px;}
+    section{padding-top:64px !important;padding-bottom:64px !important;}
+    .foot-link{padding:9px 0;margin-bottom:0 !important;}
+    #services a[style*="align-self:flex-start"]{padding:12px 0;}
+    .footer-social{gap:8px;}
+    .footer-social a{padding:11px;margin:5px -11px 0;}
+    footer span a{display:inline-block;padding:12px 6px;}
   }
 </style>
 
@@ -80,13 +101,14 @@
 <div style="background:#f3f1ec;color:#1f1f1f;font-family:var(--sans);line-height:1.65;overflow-x:hidden;">
 
   <nav style="position:sticky;top:0;z-index:50;background:rgba(243,241,236,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(31,31,31,.1);">
-    <div class="wrap" style="height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <div class="wrap nav-bar">
       <a href="/" style="font-family:var(--serif);font-size:20px;font-weight:500;color:#0f5e70;letter-spacing:-.01em;">Romy M<span style="color:#d3a032;">.</span></a>
-      <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#services">Services</a>
         <a class="nav-link" href="#case-study">Case study</a>
-        <a class="nav-link" href="scale-ready-os-waitlist-page.html">Join Scale Ready OS</a>
+        <a class="nav-link" href="/scale-ready-os">Join Scale Ready OS</a>
         <a class="nav-link" href="https://login.romymofficial.com/" target="_blank" rel="noopener">Log in →</a>
         <a class="btn-solid" href="https://tidycal.com/3zkp0x3/30-minute-discovery" style="font-size:11px;padding:13px 22px;">Book a discovery call</a>
       </div>
@@ -217,9 +239,6 @@
 
   <section id="services" style="background:#ffffff;padding:124px 0;">
     <div class="wrap">
-      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:14px;flex-wrap:wrap;">
-        <span style="flex:1;height:1px;background:#86b1b4;min-width:60px;"></span>
-      </div>
       <h2 style="font-family:var(--serif);font-size:clamp(30px,3.4vw,50px);font-weight:400;color:#0f5e70;line-height:1.06;letter-spacing:-.024em;margin:0 0 60px;">Three ways I support founders</h2>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:start;">
@@ -260,7 +279,7 @@
             <h3 style="font-family:var(--serif);font-size:28px;font-weight:400;color:#f3f1ec;line-height:1.15;margin:0 0 10px;">Scale Ready OS</h3>
             <div style="font-family:var(--alt);font-size:14px;font-weight:600;color:#d3a032;margin-bottom:28px;">Founder's Cohort · Waitlist Open</div>
             <p style="font-size:15.5px;color:rgba(243,241,236,.82);line-height:1.68;margin:0 0 24px;">A 12-week operations programme for coaches and consultants ready to scale without being the infrastructure their business runs on.</p>
-            <a href="scale-ready-os-waitlist-page.html" style="align-self:flex-start;font-family:var(--alt);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#f0c65a;">Join The Waitlist →</a>
+            <a href="/scale-ready-os" style="align-self:flex-start;font-family:var(--alt);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#f0c65a;">Join The Waitlist →</a>
           </div>
         </div>
       </div>
@@ -322,7 +341,7 @@
         </div>
         <div>
           <div style="font-family:var(--alt);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:#86b1b4;margin-bottom:16px;">Resources</div>
-          <a class="foot-link" href="scale-ready-os-waitlist-page.html">Join Scale Ready OS</a>
+          <a class="foot-link" href="/scale-ready-os">Join Scale Ready OS</a>
           <a class="foot-link" href="https://login.romymofficial.com/" style="margin-bottom:0;">Course login</a>
         </div>
         <div>
@@ -338,7 +357,7 @@
       </div>
       <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:11px;color:rgba(243,241,236,.32);text-transform:uppercase;letter-spacing:.08em;">
         <span>© 2026 RomyM Official</span>
-        <span><a href="Terms.html" style="color:rgba(243,241,236,.32);">Terms</a> · <a href="Privacy.html" style="color:rgba(243,241,236,.32);">Privacy</a></span>
+        <span><a href="/terms" style="color:rgba(243,241,236,.32);">Terms</a> · <a href="/privacy" style="color:rgba(243,241,236,.32);">Privacy</a></span>
       </div>
     </div>
   </footer>
@@ -346,6 +365,19 @@
 </div>
 
 <script>
+(function(){
+  var t = document.getElementById('navToggle'), m = document.getElementById('navLinks');
+  if (t && m) {
+    t.addEventListener('click', function(){
+      var open = m.classList.toggle('is-open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      t.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    m.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') { m.classList.remove('is-open'); t.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
 (function(){
   var slot = document.querySelector('.feedspace-embed');
   if (slot) {
