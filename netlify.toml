@@ -1,4 +1,10 @@
 [[redirects]]
+  from = "/scale-ready-os.html"
+  to = "/scale-ready-os"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
