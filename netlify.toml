@@ -5,12 +5,6 @@
   force = true
 
 [[redirects]]
-  from = "/scale-ready-os/"
-  to = "/scale-ready-os"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/scale-ready-os"
   to = "/scale-ready-os-waitlist-page.html"
   status = 200
