@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/scale-ready-os.html"
+  from = "/scale-ready-os-waitlist-page"
   to = "/scale-ready-os"
   status = 301
   force = true
@@ -9,11 +9,6 @@
   to = "/"
   status = 301
   force = true
-
-[[redirects]]
-  from = "/scale-ready-os"
-  to = "/scale-ready-os-waitlist-page.html"
-  status = 200
 
 [[redirects]]
   from = "/terms"
