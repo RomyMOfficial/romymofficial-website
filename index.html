@@ -33,24 +33,30 @@
 </script>
 
 <style>
+  :root{
+    --serif:"Noto Serif",Georgia,serif;
+    --sans:"Montserrat",Helvetica,Arial,sans-serif;
+    --alt:"Raleway",Arial,sans-serif;
+    --script:"Caveat",cursive;
+  }
   body{margin:0;background:#f3f1ec;}
   a{color:#0f5e70;text-decoration:none;}
   a:hover{color:#0d4249;}
   @keyframes rmMarquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-  .btn-solid{font-family:'Montserrat',Arial,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;background:#0f5e70;color:#ffffff;transition:background 180ms cubic-bezier(.22,.61,.36,1);}
+  .btn-solid{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.08em;background:#0f5e70;color:#ffffff;transition:background 180ms cubic-bezier(.22,.61,.36,1);}
   .btn-solid:hover{background:#c3dbd8;color:#0f5e70;}
   .footer-social{display:flex;gap:16px;margin-top:16px;}
   .footer-social a{color:rgba(243,241,236,.6);display:inline-flex;transition:color 180ms cubic-bezier(.22,.61,.36,1);}
   .footer-social a:hover{color:#d3a032;}
   .footer-social svg{width:20px;height:20px;display:block;fill:currentColor;}
-  .btn-ghost{font-family:'Montserrat',Arial,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#0f5e70;border:1px solid #0f5e70;transition:background 180ms cubic-bezier(.22,.61,.36,1),color 180ms cubic-bezier(.22,.61,.36,1);}
+  .btn-ghost{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#0f5e70;border:1px solid #0f5e70;transition:background 180ms cubic-bezier(.22,.61,.36,1),color 180ms cubic-bezier(.22,.61,.36,1);}
   .btn-ghost:hover{background:#0f5e70;color:#ffffff;}
-  .nav-link{font-family:'Raleway',Arial,sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#4a4a4a;}
+  .nav-link{font-family:var(--alt);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#4a4a4a;}
   .nav-link:hover{color:#0f5e70;}
   .foot-link{display:block;font-size:14px;color:rgba(243,241,236,.6);margin-bottom:8px;}
   .foot-link:hover{color:#f3f1ec;}
-  .tab-btn{display:flex;align-items:center;gap:10px;font-family:'Montserrat',Arial,sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;padding:14px 26px;border:none;cursor:pointer;background:transparent;color:#0f5e70;transition:background 180ms cubic-bezier(.22,.61,.36,1),color 180ms cubic-bezier(.22,.61,.36,1);}
+  .tab-btn{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;padding:14px 26px;border:none;cursor:pointer;background:transparent;color:#0f5e70;transition:background 180ms cubic-bezier(.22,.61,.36,1),color 180ms cubic-bezier(.22,.61,.36,1);}
   .tab-btn.is-active{background:#0f5e70;color:#ffffff;}
   .wrap{max-width:1280px;margin:0 auto;padding:0 48px;}
 
@@ -67,15 +73,15 @@
   }
 </style>
 
-<script src="https://js.feedspace.io/v1/embed/embed.min.js" async></script>
+
 </head>
 <body>
 
-<div style="background:#f3f1ec;color:#1f1f1f;font-family:'Montserrat',Helvetica,Arial,sans-serif;line-height:1.65;overflow-x:hidden;">
+<div style="background:#f3f1ec;color:#1f1f1f;font-family:var(--sans);line-height:1.65;overflow-x:hidden;">
 
   <nav style="position:sticky;top:0;z-index:50;background:rgba(243,241,236,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(31,31,31,.1);">
     <div class="wrap" style="height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-      <a href="/" style="font-family:'Noto Serif',Georgia,serif;font-size:20px;font-weight:500;color:#0f5e70;letter-spacing:-.01em;">Romy M<span style="color:#d3a032;">.</span></a>
+      <a href="/" style="font-family:var(--serif);font-size:20px;font-weight:500;color:#0f5e70;letter-spacing:-.01em;">Romy M<span style="color:#d3a032;">.</span></a>
       <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#services">Services</a>
@@ -90,8 +96,8 @@
   <section id="hero" style="position:relative;padding:96px 0 120px;background:#f3f1ec;overflow:hidden;">
     <div class="wrap" style="position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:56px;align-items:center;">
       <div style="flex:1.6 1 360px;min-width:0;">
-        <h1 style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(32px,3.5vw,54px);font-weight:400;color:#0f5e70;line-height:1.08;letter-spacing:-.022em;margin:0 0 10px;">You've got the demand to grow,</h1>
-        <p style="font-family:'Noto Serif',Georgia,serif;font-style:italic;font-size:clamp(21px,2.4vw,33px);font-weight:400;color:#1f1f1f;line-height:1.24;letter-spacing:-.018em;margin:0 0 30px;">but not the <span style="background:linear-gradient(180deg,rgba(240,198,90,0) 52%,#f0c65a 52%,#f0c65a 94%,rgba(240,198,90,0) 94%);padding:0 .06em;">hours</span>.</p>
+        <h1 style="font-family:var(--serif);font-size:clamp(32px,3.5vw,54px);font-weight:400;color:#0f5e70;line-height:1.08;letter-spacing:-.022em;margin:0 0 10px;">You've got the demand to grow,</h1>
+        <p style="font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.4vw,33px);font-weight:400;color:#1f1f1f;line-height:1.24;letter-spacing:-.018em;margin:0 0 30px;">but not the <span style="background:linear-gradient(180deg,rgba(240,198,90,0) 52%,#f0c65a 52%,#f0c65a 94%,rgba(240,198,90,0) 94%);padding:0 .06em;">hours</span>.</p>
         <p style="font-size:17px;color:#4a4a4a;line-height:1.7;margin:0 0 36px;max-width:56ch;">You can't take on more clients or serve them at a deeper level when most of your week disappears into admin and follow-up that your systems and tech should be handling. Let's fix that and get you the capacity to scale your business.</p>
         <div style="display:flex;gap:14px;align-items:stretch;flex-wrap:wrap;">
           <a class="btn-solid" href="https://tidycal.com/3zkp0x3/30-minute-discovery" style="font-size:12px;padding:16px 30px;white-space:nowrap;display:flex;align-items:center;">Book a discovery call</a>
@@ -102,7 +108,7 @@
         <div style="position:relative;background:#ffffff;padding:14px 14px 58px;transform:rotate(-2.2deg);box-shadow:0 1px 0 rgba(31,31,31,.06);">
           <div style="position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-4deg);width:118px;height:30px;background:#d3a032;"></div>
           <div style="overflow:hidden;"><img src="assets/romy-laptop.jpg" alt="Romy Mueller" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;transform:scale(1.52);transform-origin:center 30%;"></div>
-          <div style="position:absolute;left:22px;bottom:16px;font-family:'Caveat',cursive;font-size:24px;color:#1f1f1f;">Hello, nice to meet you!</div>
+          <div style="position:absolute;left:22px;bottom:16px;font-family:var(--script);font-size:24px;color:#1f1f1f;">Hello, nice to meet you!</div>
         </div>
       </div>
     </div>
@@ -110,11 +116,11 @@
 
   <div style="background:#0d4249;transform:rotate(-1.6deg);width:112%;margin-left:-6%;padding:18px 0;overflow:hidden;position:relative;z-index:3;">
     <div style="display:flex;width:max-content;animation:rmMarquee 34s linear infinite;">
-      <div style="display:flex;gap:34px;padding-right:34px;font-family:'Raleway',Arial,sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.22em;color:#f3f1ec;white-space:nowrap;">
+      <div style="display:flex;gap:34px;padding-right:34px;font-family:var(--alt);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.22em;color:#f3f1ec;white-space:nowrap;">
         <span>Growth Operations</span><span style="color:#d3a032;">·</span><span>AI Integration</span><span style="color:#d3a032;">·</span><span>Growth Operations</span><span style="color:#d3a032;">·</span><span>AI Integration</span><span style="color:#d3a032;">·</span>
         <span>Growth Operations</span><span style="color:#d3a032;">·</span><span>AI Integration</span><span style="color:#d3a032;">·</span><span>Growth Operations</span><span style="color:#d3a032;">·</span><span>AI Integration</span><span style="color:#d3a032;">·</span>
       </div>
-      <div style="display:flex;gap:34px;padding-right:34px;font-family:'Raleway',Arial,sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.22em;color:#f3f1ec;white-space:nowrap;">
+      <div style="display:flex;gap:34px;padding-right:34px;font-family:var(--alt);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.22em;color:#f3f1ec;white-space:nowrap;">
         <span>Growth Operations</span><span style="color:#d3a032;">·</span><span>AI Integration</span><span style="color:#d3a032;">·</span><span>Growth Operations</span><span style="color:#d3a032;">·</span><span>AI Integration</span><span style="color:#d3a032;">·</span>
         <span>Growth Operations</span><span style="color:#d3a032;">·</span><span>AI Integration</span><span style="color:#d3a032;">·</span><span>Growth Operations</span><span style="color:#d3a032;">·</span><span>AI Integration</span><span style="color:#d3a032;">·</span>
       </div>
@@ -123,33 +129,33 @@
 
   <section style="background:#ffffff;padding:120px 0;">
     <div class="wrap">
-      <h2 style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(30px,3vw,44px);font-weight:400;color:#0f5e70;line-height:1.12;letter-spacing:-.022em;margin:0 0 14px;">From the outside, your business is <span style="font-style:italic;background:linear-gradient(180deg,rgba(240,198,90,0) 56%,#f0c65a 56%,#f0c65a 96%,rgba(240,198,90,0) 96%);padding:0 .05em;">crushing</span> it.</h2>
-      <p style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(22px,2.1vw,30px);color:#1f1f1f;line-height:1.3;letter-spacing:-.016em;margin:0 0 6px;">Behind the scenes, it's a different story.</p>
-      <p style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(22px,2.1vw,30px);color:#1f1f1f;line-height:1.3;letter-spacing:-.016em;margin:0 0 26px;">It works because you work.</p>
+      <h2 style="font-family:var(--serif);font-size:clamp(30px,3vw,44px);font-weight:400;color:#0f5e70;line-height:1.12;letter-spacing:-.022em;margin:0 0 14px;">From the outside, your business is <span style="font-style:italic;background:linear-gradient(180deg,rgba(240,198,90,0) 56%,#f0c65a 56%,#f0c65a 96%,rgba(240,198,90,0) 96%);padding:0 .05em;">crushing</span> it.</h2>
+      <p style="font-family:var(--serif);font-size:clamp(22px,2.1vw,30px);color:#1f1f1f;line-height:1.3;letter-spacing:-.016em;margin:0 0 6px;">Behind the scenes, it's a different story.</p>
+      <p style="font-family:var(--serif);font-size:clamp(22px,2.1vw,30px);color:#1f1f1f;line-height:1.3;letter-spacing:-.016em;margin:0 0 26px;">It works because you work.</p>
       <p style="font-size:17px;color:#4a4a4a;line-height:1.7;max-width:68ch;margin:0 0 48px;">Too much still depends on you, manual workarounds, and systems that were implemented when the business was half the size.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:0 64px;border-bottom:1px solid rgba(31,31,31,.14);">
         <div class="prob" style="display:grid;grid-template-columns:40px 1fr;gap:16px;padding:22px 14px;margin:0 -14px;border-top:1px solid rgba(31,31,31,.14);">
-          <span style="font-family:'Noto Serif',Georgia,serif;font-size:19px;color:#d3a032;line-height:1.55;">01</span>
+          <span style="font-family:var(--serif);font-size:19px;color:#d3a032;line-height:1.55;">01</span>
           <p style="font-size:15.5px;color:#4a4a4a;line-height:1.65;margin:0;">Your tech stack worked fine when your business was half the size. Tools got added and nothing was ever rewired, so now you're not sure what's where and you're afraid to touch any of it.</p>
         </div>
         <div class="prob" style="display:grid;grid-template-columns:40px 1fr;gap:16px;padding:22px 14px;margin:0 -14px;border-top:1px solid rgba(31,31,31,.14);">
-          <span style="font-family:'Noto Serif',Georgia,serif;font-size:19px;color:#d3a032;line-height:1.55;">02</span>
+          <span style="font-family:var(--serif);font-size:19px;color:#d3a032;line-height:1.55;">02</span>
           <p style="font-size:15.5px;color:#4a4a4a;line-height:1.65;margin:0;">You want the full picture on one client but that means opening three tools and searching your inbox.</p>
         </div>
         <div class="prob" style="display:grid;grid-template-columns:40px 1fr;gap:16px;padding:22px 14px;margin:0 -14px;border-top:1px solid rgba(31,31,31,.14);">
-          <span style="font-family:'Noto Serif',Georgia,serif;font-size:19px;color:#d3a032;line-height:1.55;">03</span>
+          <span style="font-family:var(--serif);font-size:19px;color:#d3a032;line-height:1.55;">03</span>
           <p style="font-size:15.5px;color:#4a4a4a;line-height:1.65;margin:0;">Your inbox runs your life and customer service, leads and to-dos are all muddled together in there, so things have started to slip.</p>
         </div>
         <div class="prob" style="display:grid;grid-template-columns:40px 1fr;gap:16px;padding:22px 14px;margin:0 -14px;border-top:1px solid rgba(31,31,31,.14);">
-          <span style="font-family:'Noto Serif',Georgia,serif;font-size:19px;color:#d3a032;line-height:1.55;">04</span>
+          <span style="font-family:var(--serif);font-size:19px;color:#d3a032;line-height:1.55;">04</span>
           <p style="font-size:15.5px;color:#4a4a4a;line-height:1.65;margin:0;">Warm leads sit in different tools, and whether you follow up depends on your meeting schedule that day and whether you remember later.</p>
         </div>
         <div class="prob" style="display:grid;grid-template-columns:40px 1fr;gap:16px;padding:22px 14px;margin:0 -14px;border-top:1px solid rgba(31,31,31,.14);">
-          <span style="font-family:'Noto Serif',Georgia,serif;font-size:19px;color:#d3a032;line-height:1.55;">05</span>
+          <span style="font-family:var(--serif);font-size:19px;color:#d3a032;line-height:1.55;">05</span>
           <p style="font-size:15.5px;color:#4a4a4a;line-height:1.65;margin:0;">The team that was supposed to lighten the workload has become the workload. Everything still comes to you for approval because you don't have a documented way of doing things.</p>
         </div>
         <div class="prob" style="display:grid;grid-template-columns:40px 1fr;gap:16px;padding:22px 14px;margin:0 -14px;border-top:1px solid rgba(31,31,31,.14);">
-          <span style="font-family:'Noto Serif',Georgia,serif;font-size:19px;color:#d3a032;line-height:1.55;">06</span>
+          <span style="font-family:var(--serif);font-size:19px;color:#d3a032;line-height:1.55;">06</span>
           <p style="font-size:15.5px;color:#4a4a4a;line-height:1.65;margin:0;">There's more work than you can manage and you're not ready to hire for all of it yet, so your to-do list just keeps growing. You know AI could take some of that work off your plate but you don't have the time to figure out how.</p>
         </div>
       </div>
@@ -159,7 +165,7 @@
   <section style="position:relative;background:#0d4249;padding:120px 0;">
     <div class="wrap" style="display:flex;flex-wrap:wrap;gap:72px;align-items:start;">
       <div style="flex:1 1 340px;min-width:0;">
-        <h2 style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(32px,3.4vw,48px);font-weight:400;color:#f3f1ec;line-height:1.1;letter-spacing:-.022em;margin:0;">The backend was never designed. <span style="font-style:italic;color:#d3a032;">It accumulated.</span></h2>
+        <h2 style="font-family:var(--serif);font-size:clamp(32px,3.4vw,48px);font-weight:400;color:#f3f1ec;line-height:1.1;letter-spacing:-.022em;margin:0;">The backend was never designed. <span style="font-style:italic;color:#d3a032;">It accumulated.</span></h2>
       </div>
       <div style="flex:1.2 1 380px;min-width:0;">
         <p style="font-size:18px;color:#f3f1ec;line-height:1.72;margin:0;font-weight:500;">The problem isn't growth. It's that your business operations never caught up. And now running your business starts taking far more effort than it should.</p>
@@ -170,17 +176,17 @@
   <section id="case-study" style="background:#c3dbd8;padding:124px 0 112px;">
     <div class="wrap">
       <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:18px;flex-wrap:wrap;">
-        <span style="font-family:'Raleway',Arial,sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:#0f5e70;">Case study · Swoop Baby</span>
+        <span style="font-family:var(--alt);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:#0f5e70;">Case study · Swoop Baby</span>
         <span style="flex:1;height:1px;background:#0f5e70;min-width:60px;"></span>
       </div>
-      <h2 class="cs-title" style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(26px,2.9vw,40px);font-weight:400;color:#0f5e70;line-height:1.12;letter-spacing:-.022em;margin:0 0 16px;white-space:nowrap;">Scaling fast on systems that weren't built for it.</h2>
+      <h2 class="cs-title" style="font-family:var(--serif);font-size:clamp(26px,2.9vw,40px);font-weight:400;color:#0f5e70;line-height:1.12;letter-spacing:-.022em;margin:0 0 16px;white-space:nowrap;">Scaling fast on systems that weren't built for it.</h2>
       <p style="font-size:16px;color:#4a4a4a;line-height:1.68;max-width:68ch;margin:0 0 40px;">Swoop Baby had strong demand and a rapidly scaling team, but the systems weren't built to handle either. Now client delivery runs on one system the whole team works from, with clients moving through it without the founder in the middle.</p>
 
       <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:44px;">
         <div style="display:inline-flex;align-items:stretch;background:#ffffff;border:1px solid #0f5e70;padding:5px;gap:5px;">
-          <button id="tabBefore" class="tab-btn is-active" type="button"><span style="font-family:'Noto Serif',Georgia,serif;font-size:15px;letter-spacing:0;text-transform:none;">01</span> Before</button>
+          <button id="tabBefore" class="tab-btn is-active" type="button"><span style="font-family:var(--serif);font-size:15px;letter-spacing:0;text-transform:none;">01</span> Before</button>
           <span style="display:flex;align-items:center;font-size:15px;color:#86b1b4;">→</span>
-          <button id="tabAfter" class="tab-btn" type="button"><span style="font-family:'Noto Serif',Georgia,serif;font-size:15px;letter-spacing:0;text-transform:none;">02</span> After</button>
+          <button id="tabAfter" class="tab-btn" type="button"><span style="font-family:var(--serif);font-size:15px;letter-spacing:0;text-transform:none;">02</span> After</button>
         </div>
       </div>
 
@@ -189,14 +195,14 @@
           <div style="position:absolute;inset:16px -16px -16px 16px;background:#0f5e70;transform:rotate(-2.4deg);"></div>
           <div style="position:relative;background:#ffffff;padding:12px 12px 72px;transform:rotate(1.6deg);">
             <img src="assets/swoop-baby.jpg" alt="Swoop Baby" style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover;">
-            <div style="position:absolute;left:20px;right:20px;bottom:14px;font-family:'Caveat',cursive;font-size:21px;line-height:1.15;color:#1f1f1f;">18k followers and growing without systems to capture demand.</div>
+            <div style="position:absolute;left:20px;right:20px;bottom:14px;font-family:var(--script);font-size:21px;line-height:1.15;color:#1f1f1f;">18k followers and growing without systems to capture demand.</div>
           </div>
         </div>
         <div>
-          <div id="panelLabel" style="font-family:'Raleway',Arial,sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#0f5e70;margin-bottom:26px;"></div>
+          <div id="panelLabel" style="font-family:var(--alt);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#0f5e70;margin-bottom:26px;"></div>
           <div id="panelRows"></div>
           <div id="outcomeBlock" style="margin-top:36px;">
-            <p style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(19px,1.9vw,25px);font-weight:500;color:#0f5e70;line-height:1.34;letter-spacing:-.014em;margin:0;">The team can now operate without the founder needing to stay across every moving part just to keep things running.</p>
+            <p style="font-family:var(--serif);font-size:clamp(19px,1.9vw,25px);font-weight:500;color:#0f5e70;line-height:1.34;letter-spacing:-.014em;margin:0;">The team can now operate without the founder needing to stay across every moving part just to keep things running.</p>
           </div>
         </div>
       </div>
@@ -205,7 +211,7 @@
 
   <section style="background:#0f5e70;padding:76px 0;">
     <div class="wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
-      <p style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(21px,2.2vw,30px);font-weight:400;color:#f3f1ec;line-height:1.4;letter-spacing:-.016em;max-width:62ch;margin:0;text-wrap:balance;">You don't just need more hands on deck. You need someone senior enough to <span style="font-style:italic;color:#d3a032;">think strategically</span> and execute without needing everything spelled out and double-checked.</p>
+      <p style="font-family:var(--serif);font-size:clamp(21px,2.2vw,30px);font-weight:400;color:#f3f1ec;line-height:1.4;letter-spacing:-.016em;max-width:62ch;margin:0;text-wrap:balance;">You don't just need more hands on deck. You need someone senior enough to <span style="font-style:italic;color:#d3a032;">think strategically</span> and execute without needing everything spelled out and double-checked.</p>
     </div>
   </section>
 
@@ -214,47 +220,47 @@
       <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:14px;flex-wrap:wrap;">
         <span style="flex:1;height:1px;background:#86b1b4;min-width:60px;"></span>
       </div>
-      <h2 style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(30px,3.4vw,50px);font-weight:400;color:#0f5e70;line-height:1.06;letter-spacing:-.024em;margin:0 0 60px;">Three ways I support founders</h2>
+      <h2 style="font-family:var(--serif);font-size:clamp(30px,3.4vw,50px);font-weight:400;color:#0f5e70;line-height:1.06;letter-spacing:-.024em;margin:0 0 60px;">Three ways I support founders</h2>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:start;">
         <div style="position:relative;display:flex;">
           <div style="position:absolute;inset:14px -14px -14px 14px;background:#c3dbd8;"></div>
           <div style="position:relative;flex:1;display:flex;flex-direction:column;background:#f3f1ec;border:1px solid #86b1b4;padding:38px 34px;">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px;">
-              <span style="font-family:'Raleway',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;color:#86b1b4;">01</span>
-              <span style="font-family:'Raleway',Arial,sans-serif;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#0d4249;background:#c3dbd8;padding:6px 12px;">Done for you</span>
+              <span style="font-family:var(--alt);font-size:11px;font-weight:600;letter-spacing:.2em;color:#86b1b4;">01</span>
+              <span style="font-family:var(--alt);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#0d4249;background:#c3dbd8;padding:6px 12px;">Done for you</span>
             </div>
-            <h3 style="font-family:'Noto Serif',Georgia,serif;font-size:28px;font-weight:400;color:#0f5e70;line-height:1.15;margin:0 0 10px;">Growth Ops Intensive</h3>
-            <div style="font-family:'Raleway',Arial,sans-serif;font-size:14px;font-weight:600;color:#1f1f1f;margin-bottom:6px;">Estimated $1,500 USD · Scope-dependent</div>
+            <h3 style="font-family:var(--serif);font-size:28px;font-weight:400;color:#0f5e70;line-height:1.15;margin:0 0 10px;">Growth Ops Intensive</h3>
+            <div style="font-family:var(--alt);font-size:14px;font-weight:600;color:#1f1f1f;margin-bottom:6px;">Estimated $1,500 USD · Scope-dependent</div>
             <div style="font-size:13px;color:#4a4a4a;margin-bottom:22px;">Please reach out for a custom quote.</div>
             <p style="font-size:15.5px;color:#4a4a4a;line-height:1.68;margin:0 0 24px;">Focussed on one problem area that's costing you time, energy and $$. Done-for-you with 1 week of support after we wrap.</p>
-            <a href="https://tidycal.com/3zkp0x3/30-minute-discovery" style="align-self:flex-start;font-family:'Raleway',Arial,sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#0f5e70;">Enquire →</a>
+            <a href="https://tidycal.com/3zkp0x3/30-minute-discovery" style="align-self:flex-start;font-family:var(--alt);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#0f5e70;">Enquire →</a>
           </div>
         </div>
         <div style="position:relative;display:flex;">
           <div style="position:absolute;inset:14px -14px -14px 14px;background:#c3dbd8;"></div>
           <div style="position:relative;flex:1;display:flex;flex-direction:column;background:#f3f1ec;border:1px solid #86b1b4;padding:38px 34px;">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px;">
-              <span style="font-family:'Raleway',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;color:#86b1b4;">02</span>
-              <span style="font-family:'Raleway',Arial,sans-serif;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#0d4249;background:#c3dbd8;padding:6px 12px;">Done for you</span>
+              <span style="font-family:var(--alt);font-size:11px;font-weight:600;letter-spacing:.2em;color:#86b1b4;">02</span>
+              <span style="font-family:var(--alt);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#0d4249;background:#c3dbd8;padding:6px 12px;">Done for you</span>
             </div>
-            <h3 style="font-family:'Noto Serif',Georgia,serif;font-size:28px;font-weight:400;color:#0f5e70;line-height:1.15;margin:0 0 10px;">Growth Ops Partnership</h3>
-            <div style="font-family:'Raleway',Arial,sans-serif;font-size:14px;font-weight:600;color:#1f1f1f;margin-bottom:28px;">$2,500 USD / month · 3-month minimum</div>
+            <h3 style="font-family:var(--serif);font-size:28px;font-weight:400;color:#0f5e70;line-height:1.15;margin:0 0 10px;">Growth Ops Partnership</h3>
+            <div style="font-family:var(--alt);font-size:14px;font-weight:600;color:#1f1f1f;margin-bottom:28px;">$2,500 USD / month · 3-month minimum</div>
             <p style="font-size:15.5px;color:#4a4a4a;line-height:1.68;margin:0 0 24px;">The ongoing operational partnership. I work directly inside the business to fix what's slowing it down, build better operational structure, and put the systems and automations in place to support the next stage of growth.</p>
-            <a href="https://tidycal.com/3zkp0x3/30-minute-discovery" style="align-self:flex-start;font-family:'Raleway',Arial,sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#0f5e70;">Book a call →</a>
+            <a href="https://tidycal.com/3zkp0x3/30-minute-discovery" style="align-self:flex-start;font-family:var(--alt);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#0f5e70;">Book a call →</a>
           </div>
         </div>
         <div style="position:relative;display:flex;">
           <div style="position:absolute;inset:14px -14px -14px 14px;background:#d3a032;"></div>
           <div style="position:relative;flex:1;display:flex;flex-direction:column;background:#0f5e70;padding:38px 34px;">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px;">
-              <span style="font-family:'Raleway',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;color:#86b1b4;">03</span>
-              <span style="font-family:'Raleway',Arial,sans-serif;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#f3f1ec;background:rgba(243,241,236,.16);padding:6px 12px;">Done with you</span>
+              <span style="font-family:var(--alt);font-size:11px;font-weight:600;letter-spacing:.2em;color:#86b1b4;">03</span>
+              <span style="font-family:var(--alt);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#f3f1ec;background:rgba(243,241,236,.16);padding:6px 12px;">Done with you</span>
             </div>
-            <h3 style="font-family:'Noto Serif',Georgia,serif;font-size:28px;font-weight:400;color:#f3f1ec;line-height:1.15;margin:0 0 10px;">Scale Ready OS</h3>
-            <div style="font-family:'Raleway',Arial,sans-serif;font-size:14px;font-weight:600;color:#d3a032;margin-bottom:28px;">Founder's Cohort · Waitlist Open</div>
+            <h3 style="font-family:var(--serif);font-size:28px;font-weight:400;color:#f3f1ec;line-height:1.15;margin:0 0 10px;">Scale Ready OS</h3>
+            <div style="font-family:var(--alt);font-size:14px;font-weight:600;color:#d3a032;margin-bottom:28px;">Founder's Cohort · Waitlist Open</div>
             <p style="font-size:15.5px;color:rgba(243,241,236,.82);line-height:1.68;margin:0 0 24px;">A 12-week operations programme for coaches and consultants ready to scale without being the infrastructure their business runs on.</p>
-            <a href="scale-ready-os-waitlist-page.html" style="align-self:flex-start;font-family:'Raleway',Arial,sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#d3a032;">Join The Waitlist →</a>
+            <a href="scale-ready-os-waitlist-page.html" style="align-self:flex-start;font-family:var(--alt);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#f0c65a;">Join The Waitlist →</a>
           </div>
         </div>
       </div>
@@ -268,11 +274,11 @@
         <div style="position:relative;background:#ffffff;padding:13px 13px 72px;transform:rotate(2deg);">
           <div style="position:absolute;top:-14px;right:26px;width:96px;height:28px;background:#d3a032;transform:rotate(6deg);"></div>
           <img src="assets/Romy9.png" alt="Romy Mueller" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;">
-          <div style="position:absolute;left:20px;right:20px;bottom:14px;font-family:'Caveat',cursive;font-size:21px;line-height:1.15;color:#1f1f1f;">Ex-Corporate Marketer, Strategist, Ops &amp; AI Consultant.</div>
+          <div style="position:absolute;left:20px;right:20px;bottom:14px;font-family:var(--script);font-size:21px;line-height:1.15;color:#1f1f1f;">Ex-Corporate Marketer, Strategist, Ops &amp; AI Consultant.</div>
         </div>
       </div>
       <div>
-        <h2 style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(32px,3.6vw,52px);font-weight:400;color:#0f5e70;line-height:1.05;letter-spacing:-.026em;margin:0 0 24px;">Hey, I'm <span style="font-style:italic;background:linear-gradient(180deg,rgba(240,198,90,0) 55%,#f0c65a 55%,#f0c65a 95%,rgba(240,198,90,0) 95%);padding:0 .06em;">Romy</span>!</h2>
+        <h2 style="font-family:var(--serif);font-size:clamp(32px,3.6vw,52px);font-weight:400;color:#0f5e70;line-height:1.05;letter-spacing:-.026em;margin:0 0 24px;">Hey, I'm <span style="font-style:italic;background:linear-gradient(180deg,rgba(240,198,90,0) 55%,#f0c65a 55%,#f0c65a 95%,rgba(240,198,90,0) 95%);padding:0 .06em;">Romy</span>!</h2>
         <p style="font-size:17px;color:#4a4a4a;line-height:1.76;margin:0 0 16px;">I spent fifteen years inside global companies like <strong style="color:#0f5e70;font-weight:500;">Reckitt Benckiser, SC&nbsp;Johnson and Coca-Cola</strong> working across brand, marketing operations, and innovation. Which meant big budgets, big teams and a ridiculous number of stakeholders and dependencies.</p>
         <p style="font-size:17px;color:#4a4a4a;line-height:1.76;margin:0 0 16px;">My job was to translate vision into best-in-class execution. To work out everything that had to happen and be the connector and integrator. I learned to interpret data, spot patterns, diagnose underlying commercial problems, and turn strategy into a plan that different teams could actually deliver.</p>
         <p style="font-size:17px;color:#4a4a4a;line-height:1.76;margin:0 0 16px;">When I moved into online business, I realised that was exactly what founders were missing.</p>
@@ -282,13 +288,13 @@
     </div>
     <div class="wrap" style="margin-top:64px;display:flex;flex-direction:column;align-items:center;">
       <div style="width:44px;height:4px;background:#d3a032;margin-bottom:28px;"></div>
-      <p style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(19px,1.95vw,26px);color:#0f5e70;line-height:1.4;letter-spacing:-.012em;margin:0;max-width:58ch;text-align:center;">That's where I come in &mdash; as the strategic partner who cuts through the complexity, clears the operational drag, and gives founders the space to lead and move the business forward.</p>
+      <p style="font-family:var(--serif);font-size:clamp(19px,1.95vw,26px);color:#0f5e70;line-height:1.4;letter-spacing:-.012em;margin:0;max-width:58ch;text-align:center;">That's where I come in &mdash; as the strategic partner who cuts through the complexity, clears the operational drag, and gives founders the space to lead and move the business forward.</p>
     </div>
   </section>
 
   <section style="background:#ffffff;padding:104px 0;">
     <div class="wrap">
-      <div style="font-family:'Raleway',Arial,sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#86b1b4;">What clients say</div>
+      <div style="font-family:var(--alt);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#86b1b4;">What clients say</div>
       <div style="width:44px;height:4px;background:#d3a032;margin:14px 0 40px;"></div>
       <div class="feedspace-embed" data-id="11176c1c-0e3c-4e57-b621-e46ea313819e"></div>
     </div>
@@ -296,7 +302,7 @@
 
   <section style="position:relative;background:#c3dbd8;padding:96px 0;">
     <div class="wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:30px;">
-      <p style="font-family:'Noto Serif',Georgia,serif;font-size:clamp(24px,2.8vw,36px);font-weight:400;color:#0f5e70;line-height:1.25;letter-spacing:-.02em;max-width:54ch;margin:0;text-wrap:balance;">If your backend hasn't kept pace with the business, let's talk.</p>
+      <p style="font-family:var(--serif);font-size:clamp(24px,2.8vw,36px);font-weight:400;color:#0f5e70;line-height:1.25;letter-spacing:-.02em;max-width:54ch;margin:0;text-wrap:balance;">If your backend hasn't kept pace with the business, let's talk.</p>
       <a class="btn-solid" href="https://tidycal.com/3zkp0x3/30-minute-discovery" style="font-size:12px;padding:16px 30px;">Book a discovery call</a>
     </div>
   </section>
@@ -305,22 +311,22 @@
     <div class="wrap">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(243,241,236,.12);">
         <div>
-          <div style="font-family:'Noto Serif',Georgia,serif;font-size:24px;color:#f3f1ec;margin-bottom:12px;">Romy M<span style="color:#d3a032;">.</span></div>
+          <div style="font-family:var(--serif);font-size:24px;color:#f3f1ec;margin-bottom:12px;">Romy M<span style="color:#d3a032;">.</span></div>
           <p style="font-size:14px;color:rgba(243,241,236,.5);line-height:1.6;margin:0;max-width:26ch;">Growth Operations &amp; AI Integration</p>
         </div>
         <div>
-          <div style="font-family:'Raleway',Arial,sans-serif;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:#86b1b4;margin-bottom:16px;">Work</div>
+          <div style="font-family:var(--alt);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:#86b1b4;margin-bottom:16px;">Work</div>
           <a class="foot-link" href="#about">About</a>
           <a class="foot-link" href="#services">Services</a>
           <a class="foot-link" href="#case-study" style="margin-bottom:0;">Case study</a>
         </div>
         <div>
-          <div style="font-family:'Raleway',Arial,sans-serif;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:#86b1b4;margin-bottom:16px;">Resources</div>
+          <div style="font-family:var(--alt);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:#86b1b4;margin-bottom:16px;">Resources</div>
           <a class="foot-link" href="scale-ready-os-waitlist-page.html">Join Scale Ready OS</a>
           <a class="foot-link" href="https://login.romymofficial.com/" style="margin-bottom:0;">Course login</a>
         </div>
         <div>
-          <div style="font-family:'Raleway',Arial,sans-serif;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:#86b1b4;margin-bottom:16px;">Contact</div>
+          <div style="font-family:var(--alt);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:#86b1b4;margin-bottom:16px;">Contact</div>
           <a class="foot-link" href="mailto:hello@romymofficial.com">hello@romymofficial.com</a>
           <a class="foot-link" href="https://tidycal.com/3zkp0x3/30-minute-discovery" target="_blank" rel="noopener" style="margin-bottom:0;">Book a discovery call</a>
 <div class="footer-social">
@@ -340,6 +346,23 @@
 </div>
 
 <script>
+(function(){
+  var slot = document.querySelector('.feedspace-embed');
+  if (slot) {
+    var load = function(){
+      var t = document.createElement('script');
+      t.src = 'https://js.feedspace.io/v1/embed/embed.min.js';
+      t.async = true;
+      document.head.appendChild(t);
+    };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        if (entries[0].isIntersecting) { io.disconnect(); load(); }
+      }, {rootMargin: '400px'});
+      io.observe(slot);
+    } else { load(); }
+  }
+})();
 (function(){
   var before = [
     { n:'01', title:'The founder as single point of failure', text:'Every communication from first enquiry to final follow-up ran through one person. When that person was at capacity, so was the business.' },
@@ -368,8 +391,8 @@
     label.textContent = labels[tab];
     rows.innerHTML = items.map(function(r){
       return '<div style="display:flex;gap:22px;padding:22px 0;border-bottom:1px solid rgba(31,31,31,.1);">' +
-        '<span style="font-family:\'Noto Serif\',Georgia,serif;font-size:22px;color:#d3a032;line-height:1.1;flex-shrink:0;min-width:32px;">' + esc(r.n) + '</span>' +
-        '<div><div style="font-family:\'Noto Serif\',Georgia,serif;font-size:19px;color:#0f5e70;line-height:1.3;margin-bottom:7px;">' + esc(r.title) + '</div>' +
+        '<span style="font-family:var(--serif);font-size:22px;color:#d3a032;line-height:1.1;flex-shrink:0;min-width:32px;">' + esc(r.n) + '</span>' +
+        '<div><div style="font-family:var(--serif);font-size:19px;color:#0f5e70;line-height:1.3;margin-bottom:7px;">' + esc(r.title) + '</div>' +
         '<p style="font-size:15px;color:#4a4a4a;line-height:1.62;margin:0;">' + esc(r.text) + '</p></div></div>';
     }).join('');
     bBtn.classList.toggle('is-active', tab === 'before');
