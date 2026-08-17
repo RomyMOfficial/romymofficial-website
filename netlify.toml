@@ -11,6 +11,11 @@
   force = true
 
 [[redirects]]
+  from = "/scale-ready-os-join"
+  to = "/scale-ready-os-join.html"
+  status = 200
+
+[[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
