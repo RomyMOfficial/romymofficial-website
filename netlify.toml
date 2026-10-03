@@ -36,3 +36,18 @@
   to = "https://tidycal.com/3zkp0x3/30-minute-discovery"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/consulting-terms"
+  to = "/ConsultingTerms.html"
+  status = 200
+
+[[redirects]]
+  from = "/digital-product-terms"
+  to = "/DigitalProductTerms.html"
+  status = 200
+
+[[redirects]]
+  from = "/ai-data-handling"
+  to = "/AIDataHandling.html"
+  status = 200
