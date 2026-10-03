@@ -39,15 +39,29 @@
 
 [[redirects]]
   from = "/consulting-terms"
-  to = "/ConsultingTerms.html"
-  status = 200
+  to = "/terms"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/digital-product-terms"
-  to = "/DigitalProductTerms.html"
-  status = 200
+  to = "/terms"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/ai-data-handling"
   to = "/AIDataHandling.html"
   status = 200
+
+[[redirects]]
+  from = "/ConsultingTerms.html"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/DigitalProductTerms.html"
+  to = "/terms"
+  status = 301
+  force = true
