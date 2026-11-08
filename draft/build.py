@@ -34,7 +34,7 @@ LOGIN = "https://login.romymofficial.com/"
 
 PAGE_META = {
     "index.html": ("Romy Mueller | Business Strategist & Operations Partner",
-                   "You've built a successful 6- or 7-figure coaching business - now you need the infrastructure to match. I overhaul your operations, streamline your tech, and build the backend systems required to support your next level of growth."),
+                   "Business strategist and operations partner for 6- and 7-figure coaching businesses. I overhaul operations, streamline tech and build the systems for growth."),
     "private-work.html": ("Private Strategy & Implementation | Romy Mueller",
                           "For established coaching and education businesses that want experienced strategic input and someone who can do the work."),
     "strategy-call.html": ("Strategy Call | Romy Mueller",
@@ -44,7 +44,7 @@ PAGE_META = {
     "case-studies.html": ("Case Studies | Romy Mueller",
                           "Selected client work: an online education business and a baby sleep consultancy."),
     "case-study-waca.html": ("Case study: Socially Sands / WACA | Romy Mueller",
-                             "Rebuilding the systems behind a growing coaching business: platform migrations, automated recurring work, trustworthy tracking and an improved checkout setup."),
+                             "Rebuilding the systems behind a growing coaching business: platform migrations, automated recurring work, trustworthy tracking and a better checkout."),
     "case-study-swoop-baby.html": ("Case study: Swoop Baby | Romy Mueller",
                                    "Building the systems to support a growing service business: a rebuilt client journey, client tracking in one place and automated onboarding and follow-ups."),
 }

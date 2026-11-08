@@ -1017,3 +1017,51 @@ h2.sec-label { font-weight: 600; }
 .client-feature .text-link-dark { margin-top: 22px; }
 /* Final CTA: two lines */
 .cta h2 { font-size: clamp(26px, 2.6vw, 38px); max-width: 32ch; }
+
+/* Hero, flipped: photo left, headline right (she looks into the copy) */
+.hero-flip .wrap { grid-template-columns: 0.9fr 1.1fr; }
+.hero-flip .wrap > div { order: 2; }
+.hero-flip figure { order: 1; justify-self: start; }
+.hero-flip .hero-photo .crop img { object-position: center 20%; transform: none; }
+.hero-flip .quarter { right: auto; left: -90px; bottom: -90px; }
+@media (max-width: 960px) { .hero-flip .wrap > div { order: 1; } .hero-flip figure { order: 2; } }
+/* Flipped hero photo: show the full frame, no zoom */
+.hero-flip .hero-photo { max-width: 380px; }
+.hero-flip .hero-photo .crop { aspect-ratio: 941 / 1500; }
+.hero-flip .hero-photo .crop img { object-fit: contain; object-position: center; }
+.hero-flip .wrap { grid-template-columns: 0.8fr 1.2fr; gap: 72px; }
+/* Hero photo: 500px on desktop, full frame of the 1182x1330 source */
+.hero .wrap { grid-template-columns: 1fr 500px; gap: 72px; }
+.hero figure.hero-photo { max-width: 500px; width: 100%; justify-self: end; }
+.hero-photo .crop { aspect-ratio: 1182 / 1330; }
+.hero-photo .crop img { object-fit: cover; object-position: center top; transform: none; }
+@media (max-width: 1100px) { .hero .wrap { grid-template-columns: 1fr 420px; gap: 48px; } }
+@media (max-width: 960px) { .hero .wrap { grid-template-columns: 1fr; } .hero figure.hero-photo { justify-self: start; max-width: 420px; } }
+.hero figure.hero-photo { aspect-ratio: auto; }
+/* Hero: real selfie on the left (she looks into the copy), headline right */
+.hero.hero-flip .wrap { grid-template-columns: 400px 1fr; gap: 72px; }
+.hero.hero-flip .wrap > div { order: 2; }
+.hero.hero-flip figure.hero-photo { order: 1; justify-self: start; max-width: 400px; }
+.hero.hero-flip .hero-photo .crop { aspect-ratio: 941 / 1500; }
+.hero.hero-flip .hero-photo .crop img { object-fit: cover; object-position: center; }
+.hero.hero-flip .quarter { right: auto; left: -90px; bottom: -90px; }
+@media (max-width: 1100px) { .hero.hero-flip .wrap { grid-template-columns: 340px 1fr; gap: 48px; } }
+@media (max-width: 960px) { .hero.hero-flip .wrap { grid-template-columns: 1fr; } .hero.hero-flip .wrap > div { order: 1; } .hero.hero-flip figure.hero-photo { order: 2; max-width: 360px; } }
+/* Hero photo smaller: 320px, within what the 941px source can carry on Retina */
+.hero.hero-flip .wrap { grid-template-columns: 320px 1fr; gap: 80px; align-items: center; }
+.hero.hero-flip figure.hero-photo { max-width: 320px; }
+@media (max-width: 1100px) { .hero.hero-flip .wrap { grid-template-columns: 300px 1fr; gap: 48px; } }
+@media (max-width: 960px) { .hero.hero-flip .wrap { grid-template-columns: 1fr; } .hero.hero-flip figure.hero-photo { max-width: 320px; } }
+
+/* Offer cards: subtle outline, soft shade, teal top edge, underlined teal links (sharp corners) */
+.way { background: #ffffff; border: 1px solid rgba(15,94,112,0.16); border-top: 4px solid var(--teal); box-shadow: 0 1px 2px rgba(15,94,112,0.05), 0 6px 18px rgba(15,94,112,0.07); transform: none; }
+.way:hover { border-color: rgba(15,94,112,0.3); border-top-color: var(--teal); box-shadow: 0 2px 4px rgba(15,94,112,0.06), 0 10px 26px rgba(15,94,112,0.11); transform: none; }
+.way.way-teal { border-color: var(--teal); border-top-color: var(--gold); box-shadow: 0 6px 18px rgba(13,66,73,0.22); }
+.way .text-link-dark, .way .text-link { font-weight: 600; color: var(--teal); border-bottom: 0 !important; background-image: linear-gradient(var(--teal), var(--teal)); background-size: 100% 1.5px; background-position: 0 100%; background-repeat: no-repeat; padding-bottom: 3px; }
+.way .text-link-dark:hover, .way .text-link:hover { background-image: linear-gradient(var(--gold), var(--gold)); color: var(--forest); }
+.way.way-teal .text-link { color: var(--cream); background-image: linear-gradient(var(--cream), var(--cream)); }
+.way.way-teal .text-link:hover { background-image: linear-gradient(var(--gold-light), var(--gold-light)); color: var(--cream); }
+.way .text-link-dark span[aria-hidden], .way .text-link span[aria-hidden] { color: inherit; }
+.way-tag { background: transparent; color: #5a6b6d; padding: 0; letter-spacing: 0.2em; }
+.way.way-teal .way-tag { color: #c3dbd8; background: transparent; }
+.way-wide { border-top: 4px solid var(--teal); }
