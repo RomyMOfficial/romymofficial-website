@@ -65,3 +65,41 @@
   to = "/terms"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/case-studies.html"
+  to = "/case-studies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies"
+  to = "/case-studies.html"
+  status = 200
+
+[[redirects]]
+  from = "/case-study-waca.html"
+  to = "/case-study-waca"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-study-waca"
+  to = "/case-study-waca.html"
+  status = 200
+
+[[redirects]]
+  from = "/case-study-swoop-baby.html"
+  to = "/case-study-swoop-baby"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-study-swoop-baby"
+  to = "/case-study-swoop-baby.html"
+  status = 200
+
+[[redirects]]
+  from = "/scale-ready-os"
+  to = "/scale-ready-os.html"
+  status = 200
