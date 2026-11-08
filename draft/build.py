@@ -42,12 +42,48 @@ PAGE_META = {
     "scale-ready-os.html": ("Scale Ready OS | Romy Mueller",
                             "A 12-week group programme for coaches and consultants who want to build a better way to run their business. Next intake 1 December 2026."),
     "case-studies.html": ("Case Studies | Romy Mueller",
-                          "Selected client work: an online education business and a baby sleep consultancy."),
+                          "Case studies from Romy Mueller's work with coaching and education businesses: platform migrations, automation, tracking and checkout changes, with the numbers."),
     "case-study-waca.html": ("Case study: Socially Sands / WACA | Romy Mueller",
                              "Rebuilding the systems behind a growing coaching business: platform migrations, automated recurring work, trustworthy tracking and a better checkout."),
     "case-study-swoop-baby.html": ("Case study: Swoop Baby | Romy Mueller",
                                    "Building the systems to support a growing service business: a rebuilt client journey, client tracking in one place and automated onboarding and follow-ups."),
 }
+
+ORG = {"@type": "Organization", "@id": SITE + "#organization", "name": "RomyM Official", "url": SITE, "logo": SITE + "assets/favicon.png",
+       "founder": {"@type": "Person", "@id": SITE + "#romy", "name": "Romy Mueller", "jobTitle": "Business Strategist & Operations Partner", "url": SITE,
+                   "sameAs": ["https://www.instagram.com/romym_official/", "https://www.linkedin.com/in/romymueller/", "https://www.tiktok.com/@romymofficial"]},
+       "sameAs": ["https://www.instagram.com/romym_official/", "https://www.linkedin.com/in/romymueller/", "https://www.tiktok.com/@romymofficial"],
+       "areaServed": "Worldwide", "email": "hello@romymofficial.com"}
+CASE_STUDIES = {"case-study-waca.html": ("Rebuilding the systems behind a growing coaching business", "Socially Sands / WACA"),
+                "case-study-swoop-baby.html": ("Building the systems to support a growing service business", "Swoop Baby")}
+def jsonld(fn, title, desc, canon):
+    import json
+    graph = [ORG]
+    page = {"@type": "WebPage", "@id": canon + "#webpage", "url": canon, "name": title, "description": desc, "inLanguage": "en-AU",
+            "isPartOf": {"@type": "WebSite", "@id": SITE + "#website", "url": SITE, "name": "Romy Mueller", "publisher": {"@id": SITE + "#organization"}},
+            "about": {"@id": SITE + "#organization"}}
+    if fn == "index.html":
+        page["@type"] = ["WebPage", "ProfilePage"]; page["mainEntity"] = {"@id": SITE + "#romy"}
+    graph.append(page)
+    if fn in CASE_STUDIES:
+        headline, client = CASE_STUDIES[fn]
+        graph.append({"@type": "Article", "@id": canon + "#article", "headline": headline, "description": desc, "url": canon, "mainEntityOfPage": canon,
+                      "articleSection": "Case study", "about": {"@type": "Organization", "name": client},
+                      "author": {"@id": SITE + "#romy"}, "publisher": {"@id": SITE + "#organization"}, "inLanguage": "en-AU",
+                      "image": SITE + "assets/" + ("waca-hero.jpg" if "waca" in fn else "swoop-baby.jpg")})
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE},
+            {"@type": "ListItem", "position": 2, "name": "Case Studies", "item": SITE + "case-studies"},
+            {"@type": "ListItem", "position": 3, "name": client, "item": canon}]})
+    if fn == "case-studies.html":
+        graph.append({"@type": "CollectionPage", "@id": canon + "#collection", "url": canon, "name": title,
+                      "hasPart": [{"@type": "Article", "url": SITE + "case-study-waca", "headline": CASE_STUDIES["case-study-waca.html"][0]},
+                                  {"@type": "Article", "url": SITE + "case-study-swoop-baby", "headline": CASE_STUDIES["case-study-swoop-baby.html"][0]}]})
+    if fn == "scale-ready-os.html":
+        graph.append({"@type": "Course", "@id": canon + "#course", "name": "Scale Ready OS", "description": desc, "url": canon,
+                      "provider": {"@id": SITE + "#organization"}, "inLanguage": "en-AU",
+                      "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "startDate": "2026-12-01", "courseWorkload": "PT2H"}})
+    return '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False) + '</script>'
 
 def head(fn):
     title, desc = PAGE_META[fn]
@@ -74,6 +110,8 @@ def head(fn):
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <link rel="canonical" href="{canon}">
+{jsonld(fn, title, desc, canon)}
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="icon" type="image/png" href="{PREFIX}assets/favicon.png">
 <link rel="apple-touch-icon" href="{PREFIX}assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
